@@ -1,0 +1,90 @@
+/* tables */
+table.tablesorter {
+	font-family:arial;
+	/*background-color: #afb593;*/
+        background-color: #808080;
+	margin:10px 0pt 15px;
+	font-size: 10pt;
+	width:902px;
+	text-align: center;
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	/*background-color:#afb593;*/
+        background-color: #808080;
+	border: 1px solid white;
+	font-size: 11pt;
+        padding-right: 25px;
+        padding-left: 10px;
+        color: white;
+        font: normal;
+
+}
+table.tablesorter thead tr .header {
+	background-image: url(/QuickKlix/images/arrow-none.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.tablesorter tbody td {
+	color: black;
+	padding: 4px;
+	background-color: white;
+	vertical-align: top;
+
+}
+table.tablesorter tbody tr.odd td {
+	background-color:white;
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(/QuickKlix/images/arrow-up.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(/QuickKlix/images/arrow-down.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: #808080;
+}
+.pg-normal
+{
+	font-family:Verdana;
+	font-size:8pt;
+	color: #00a9f1;
+	font-weight: bold;
+	text-transform:uppercase;
+	background:white;
+	border: white 1px solid ;
+	overflow:visible;
+	width:110px;
+	padding-right:10px;
+	padding-left:10px;
+       	cursor:pointer;
+
+}
+
+.pg-normal:hover{
+    font-family:Verdana;
+	font-size:8pt;
+	color: blue;
+	font-weight: bold;
+	text-transform:uppercase;
+	background:white;
+	border: white 1px solid ;
+	overflow:visible;
+	width:110px;
+	padding-right:10px;
+	padding-left:10px;
+       	cursor:pointer;
+
+
+}
+
+.paginated
+{
+	width:800px;
+	font-size:.8em;
+	font-family:arial,sans-serif;
+	border:1px solid #ccc;
+	border-bottom:none;
+	border-right:none;
+
+}

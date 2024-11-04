@@ -1,0 +1,43 @@
+/*
+    Document   : headermouseover
+    Created on : 29 Aug, 2011, 7:34:30 PM
+    Author     : narayanak
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#layout{
+    position: relative;
+
+}
+
+#hintbox{
+          position:absolute;
+          font:normal 14px Verdana;
+          font-weight: bold;
+          line-height:15px;         
+          margin-left: -360px;
+          margin-top: -20px;
+          color: blue;
+          cursor: pointer;
+}
+
+#hintboxmap{ /*CSS for pop up hint box */
+          position:absolute;
+          top: 0;
+          background-color: white;
+          width: auto; 
+          padding: 3px;
+          font:normal 12px Verdana;
+          font-weight: bold;
+          line-height:20px;
+          z-index:100;          
+          visibility: hidden;
+          margin:-36px -20px 0px -382px;
+          color: #00a9f1;
+}

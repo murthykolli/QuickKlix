@@ -1,0 +1,294 @@
+
+		p, ul, h1, h2, h3{
+margin: 0;
+padding: 0;
+}
+
+body {
+background: #A1956F;
+margin: 0;
+padding: 0;
+color: #575757;
+font-family: Calibri;
+font-size: 12px;
+}
+.body_page ul{
+list-style:none;
+}
+
+/*body color changing functionality*/
+
+#container {
+/*background: url(../images/BackGImg.png)repeat-y;*/
+background: #f1f1f1;
+/*margin: 10px auto;*/
+margin: 0px auto;
+width: 990px;
+/*border: 1px solid
+#DDD;
+box-shadow: 0px 5px 15px 2px
+#333;*/
+}
+
+#footerContainer {
+background: #7F7F7F;
+/*margin: 10px auto;*/
+margin: 0px auto;
+width: 990px;
+color: white;
+text-shadow: 2px 4px 4px black;
+font-size: 11px;
+/*border: 1px solid
+#DDD;
+box-shadow: 0px 5px 15px 2px
+#333;*/
+}
+
+#header {
+
+background: white;
+}
+
+#banner {
+border-radius: 6px;
+text-align: center;
+}
+
+#navbar {
+margin: 0;
+margin-top: 2px;
+padding: 0px;
+height: 40px;
+/*background: url(https://lh4.googleusercontent.com/-QdGGK2Cr-a4/T9XinVnBTaI/AAAAAAAAAdY/4BkJYNr6knk/s962/menu.jpg)repeat-y;*/
+/*background: url(../images/menu.png)repeat-y;*/
+background: #7F7F7F;
+/*background: #65327b;*/
+/*width: 990px;*/
+
+margin-left: 5px;
+width: 978px;
+border: solid 1px #585757;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-khtml-border-radius: 5px;
+border-radius: 5px;
+}
+
+#navbar #pages {
+float: left;
+}
+
+#pages ul {
+margin: 0;
+padding: 0;
+list-style: none;
+height: 40px;
+}
+
+#pages ul li {
+float: left;
+border-right: 1px solid
+#CCC;
+position: relative;
+}
+
+#pages ul li.selected {
+background: #3f51bd;
+
+}
+
+/*Main Menu mouse over functionality*/
+
+#pages ul li a:hover {
+ /*background: #3f51bd;*/
+ /*color: blue;*/
+ background: #92D050;
+color: black;
+text-shadow: 4px 3px 7px black;
+
+}
+#pages ul li#homeLink{margin-left:0px !important;}
+
+
+/*Selected Main menu current functionality*/
+
+#pages ul li.selected a{
+    background: #92D050;
+color: black;
+text-shadow: 4px 3px 7px black;
+
+}
+
+/*header menu text (headernames) modification functionality*/
+
+#pages ul li a {
+color: white;
+text-shadow: 2px 4px 4px black;
+text-decoration: none;
+font-weight: normal;
+font-size: 14px;
+display: block;
+padding: 11px 15px 11px 15px;
+}
+#pages ul ul {
+position: absolute;
+top: 40px;
+z-index: 100;
+width: 200px;
+left: 0;
+height: auto;
+box-shadow: 4px 4px 4px -1px #333;
+border: solid 3px #7F7F7F;
+-webkit-border-radius: 0 0 9px 9px;
+-moz-border-radius: 0 0 9px 9px;
+-khtml-border-radius: 0 0 9px 9px;
+border-radius: 0 0 9px 9px;
+}
+
+/*Sub Menu Background functionality*/
+
+#pages ul li li {
+/*background:
+whiteSmoke;*/
+float: none;
+margin: 0;
+border: none;
+background: #7F7F7F;
+color: white;
+text-shadow: 2px 4px 4px black;
+}
+#pages ul li li a {
+/*color:blue;*/
+color: white;
+text-shadow: 2px 4px 4px black;
+}
+
+/*Sub Menu Mouse over functionality*/
+
+#pages ul li li a:hover {
+/*background: #3f51bd;*/
+background: #92D050;
+color: black;
+text-shadow: 4px 3px 7px black;
+}
+#social-button {
+float: right;
+padding: 7px 0;
+position: relative;
+top: 7px;
+}
+
+#social-button .share-button {
+float: left;
+}
+
+#social-button .gplus {
+float: left;
+margin-left: 5px;
+}
+
+#wrapper {
+padding: 5px;
+border-top: none;
+background:
+#F8F8F8;
+box-shadow: 0px 5px 10px -2px
+#CCC;
+padding-bottom: 50px;
+}
+
+#main-content {
+}
+
+#links{
+text-align: right;
+color: #FE9814;
+}
+
+div.title {
+border-bottom: 1px solid #AAA;
+}
+
+#horizontal-section{
+padding: 10px;
+}
+
+#footer {
+padding: 10px;
+}
+
+a {
+color: #FE9814;
+}
+
+a:hover {
+text-decoration: none;
+}
+
+a.button{
+display: inline-block;
+text-align: center;
+background: #F6C07A;
+padding: 2px 10px;
+border: 1px solid
+#D59F5A;
+color: #333;
+font-weight:bold;
+margin: 5px 0;
+text-align: right;
+text-decoration: none;
+}
+.body_home a.button{
+width: 65px;
+}
+a.button:hover{
+background: #651C1E;
+color: #DAD0AC;
+border: 1px solid #333;
+}
+p, div{
+line-height: 18px;
+
+}
+
+#content div.content{
+padding: 10px;
+}
+
+#googleAds {
+text-align: center;
+margin: 5px;
+}
+.pimage{padding:2px;border: 1px solid #ccc;}
+
+.body_home #donation{
+display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

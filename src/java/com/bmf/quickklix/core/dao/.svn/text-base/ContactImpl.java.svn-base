@@ -1,0 +1,51 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package com.bmf.quickklix.core.dao;
+
+/**
+ *
+ * @author narayanak
+ */
+
+import java.util.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import com.bmf.quickklix.core.servlet.DBConnectionPool;
+import com.bmf.quickklix.core.dao.util.*;
+import com.bmf.quickklix.ui.contactus.ContactUsBean;
+public class ContactImpl {
+
+    Connection conn = null;
+    public ContactUsBean addNewUser(String name,  String email,String subject, String comment) {
+        ResultSet rs = null;
+
+        ContactUsBean bean = new ContactUsBean();
+       // String procName = "\"UC\".\"newUserAdd\"";
+    String qry = "SELECT * from \"UC\".\"Email\"(\'" + name + "\',\'" +email + "\',\'" +subject + "\',\'" +comment+ "\')";
+      try {
+            conn = DBConnectionPool.getConnection();
+            rs = DAOUtilities.ExecuteStatement(qry, conn);
+            if (rs.next()) {
+                 bean.setName(rs.getString(1));
+                 bean.setEmail(rs.getString(2));
+                 bean.setSubject(rs.getString(3));
+                 bean.setComment(rs.getString(4));
+                 bean.setInvID(rs.getInt(5));
+                
+            }
+
+
+        } catch (Exception e) {
+           
+        } finally {
+            DBConnectionPool.freeConnection(conn);
+
+            return bean;
+        }
+    }
+
+
+}

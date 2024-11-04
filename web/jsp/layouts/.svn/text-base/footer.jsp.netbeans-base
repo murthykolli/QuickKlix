@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:: QuickKlix</title>
+<meta name="keywords" content="QuickKlix Website" />
+<meta name="description" content="QuickKlix Website" />
+<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {color: #73A85A}
+.style2 {color: #AFB593}
+-->
+</style>
+</head>
+    <body>
+    <div id="footer_wrapper_inside">
+	<div id="footer_inside">
+	     </div> <!-- end of footer -->
+</div> <!-- end of footer wrapper -->
+
+<div id="copyright_wrapper">
+	<div id="copyright">
+
+		<%--<p><a href="Home.action">HOME</a>      | <a href="Aboutus.action">ABOUT US</a>      | <a href="HomeProducts.action">PRODUCTS</a>        | <a href="Careers.action">CAREERS</a>|      <a href="Contactus.action">CONTACT</a>       | <a href="/MF_SSOWEB/LoginPage.action">LOGIN</a></p>
+		<p>Copyright ©2011 QuickKlix All Rights Reserved. Legal and Copyright<br />
+	      <a href="#"><input type="submit" value="Disclaimer" style=" background-color: #afb593; border-color: #afb593;border: inherit;color: #545454;cursor: pointer;" onclick="disclaimerModelDisplay('this'); return false;" /></a> | <a href="#"><input type="submit" value="Privacy Policy" style=" background-color: #afb593;color: #545454;  border-color: #afb593;border: inherit;cursor: pointer;" onclick="privacyModelDisplay('this'); return false;" /></a> </p>--%>
+
+              <p><a href="index.html">HOME</a>      | <a href="aboutus.html">ABOUT US</a>      | <a href="products.html">PRODUCTS</a>        | <a href="careers.html">CAREERS</a>  |      <!--<a href="http://www.quickklix.com/QuickKlix/contactus.action">CONTACT US</a>-->  <a href="http://192.168.12.18:8080/QuickKlix/contactus.action">CONTACT US</a>      | <!--<a href="http://www.quickklix.com/MF_SSOWEB/LoginPage.action">LOGIN</a>-->  <a href="http://192.168.12.18:8080/MF_SSOWEB/LoginPage.action">LOGIN</a> </p>
+		<p>Copyright © 2011 QuickKlix All Rights Reserved. Legal and Copyright<!--<br />--><!--</p>-->
+	      <!--<a href="disclaimer.html">Disclaimer</a> | <a href="privacypolicy.html">Privacy Policy</a></p>-->
+	<br/>
+        <%--<a href="#"><input type="submit" value="Disclaimer" style=" background-color: #afb593; border-color: #afb593;border: inherit;color: #545454;cursor: pointer;" onclick="disclaimerModelDisplay('this'); return false;" /></a>  |  <a href="#"><input type="submit" value="Privacy Policy" style=" background-color: #afb593;color: #545454;  border-color: #afb593;border: inherit;cursor: pointer;" onclick="privacyModelDisplay('this'); return false;" /></a> </p>--%>
+        <a href="#"><input type="submit" value="Disclaimer" style=" background-color: #afb593; border-color: #afb593;border: inherit;color: #545454;cursor: pointer;" onclick="disclaimerModelDisplay('this'); return false;" /></a> <b style="margin-left: -10px;">|</b> <a href="#"><input type="submit" value="Privacy Policy" style=" background-color: #afb593;color: #545454;width: 93px; border-color: #afb593;border: inherit;cursor: pointer;margin-left: -5px;" onclick="privacyModelDisplay('this'); return false;" /></a> </p>
+	</div>
+</div>
+</body>
+</html>

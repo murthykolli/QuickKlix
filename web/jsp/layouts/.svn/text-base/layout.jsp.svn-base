@@ -1,0 +1,63 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib uri="/struts-tags" prefix="s" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="javascript" src="/QuickKlix/scripts/AC_RunActiveContent.js"></script>
+        <%--<link href="/MF_SSOWEB/CSS/default.css" rel="stylesheet" type="text/css" />
+        <link href="/MF_SSOWEB/CSS/cssLayout.css" rel="stylesheet" type="text/css" />--%>
+        <link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+       <%-- <link rel="shortcut icon" href="/MF_SSOWEB/images/Icon.ico" />--%>
+        <title><tiles:insertAttribute name="title"/></title>
+        <script>
+            /*var Backlen=history.length;   history.go(-Backlen);*/
+            /*javascript:window.history.forword();*/
+            /*javascript:window.history.go(1);*/
+        </script>
+    </head>
+
+    <body>
+        <div id="layout">
+            <%String userName = (String) session.getAttribute("userName");%>
+            <%session.getAttribute("userType");%>
+            <%session.getAttribute("firstName");%>
+
+
+            <div id="top">
+                <s:if test='userName == null '>
+                    <tiles:insertAttribute name="header"/>
+                </s:if>
+                <s:else>
+                    <s:if test='userType == "A" '><tiles:insertAttribute name="acheader"/></s:if>
+                    <s:elseif test='userType == "C" '><tiles:insertAttribute name="coheader"/></s:elseif>
+                    <s:elseif test='userType == "M" '><tiles:insertAttribute name="acheader"/></s:elseif>
+                    <s:elseif test='userType == "I" '><tiles:insertAttribute name="coheader"/></s:elseif>
+                    <s:else><tiles:insertAttribute name="header"/></s:else>
+                </s:else>
+            </div>
+            <div>
+                <div id="left" align="left">
+                    <tiles:insertAttribute name="left"/>
+                </div>
+                <div>
+                    <div id="right">
+                        <tiles:insertAttribute name="right"/>
+                    </div>
+                    <%--<div id="content" class="cen" style=" margin-top: -80px; margin-left: 163px;">--%>
+                    <div class="cen">
+                        <%--<div id="content" class="right_content">--%>
+                            <tiles:insertAttribute name="body" />
+                       <%-- </div>--%>
+                    </div>
+                </div>
+            </div>
+            <div id="bottom">
+                <tiles:insertAttribute name="footer"/>
+            </div>
+        </div>
+    </body>
+</html>

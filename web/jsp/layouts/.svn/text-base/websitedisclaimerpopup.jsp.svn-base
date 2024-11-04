@@ -1,0 +1,45 @@
+<%--
+    Document   : privacypolicypopup
+    Created on : 10 Nov, 2011, 12:04:47 PM
+    Author     : narayanak
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25404145-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    </head>
+
+    <body>
+
+
+        <div class="two_column_left" style=" margin-top: 0px;">
+            <p><strong><font size="4">Website Disclaimer</font></strong></p>
+
+         <p style=" font-size: 12px;margin-top: -20px;">The information contained in this website is for general information purposes only. The information is provided by <strong><font color="#73a85a">QuickKlix</font></strong> and while we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.</p>
+          <p style=" font-size: 12px">In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.</p>
+          <p style=" font-size: 12px">Through this website you are able to link to other websites which are not under the control of <strong><font color="#73a85a">QuickKlix</font></strong>. We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.</p>
+          <p style=" font-size: 12px">Every effort is made to keep the website up and running smoothly. However, <strong><font color="#73a85a">QuickKlix</font></strong> takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.</p>
+
+
+      </div>
+    </body>
+</html>

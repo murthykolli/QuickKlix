@@ -1,0 +1,25 @@
+
+#layout{
+    position: relative;
+
+}
+
+#hintbox{
+          position:absolute;
+          font:bold 14px Verdana;
+          line-height:20px;
+          color:blue;
+          margin-left: 300px;
+          margin-top: 244px;
+}
+
+
+#hintboxmap{
+          position:absolute;
+          font:normal 13px Verdana;
+          font-weight: bold;
+          line-height:20px;
+          color:#00a9f1;;
+          margin-left: 100px;
+          margin-top: 225px;
+}

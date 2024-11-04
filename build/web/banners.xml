@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rotator isRandom="true">
+  <bannerTime>7</bannerTime>
+  <numberOfBanners>6</numberOfBanners>
+  <banners showHeader="true">
+    <banner>
+      <name>take the path to a successful business </name>
+      <body></body>
+      <imagePath>flash_pics1.png</imagePath>
+    </banner>
+    <banner>
+      <name>small actions can lead to big results</name>
+      <body></body>
+      <imagePath>flash_pics2.png</imagePath>
+    </banner>
+    <banner>
+      <name> be innovative and get ahead of the competition</name>
+      <body></body>
+      <imagePath>flash_pics3.png</imagePath>
+    </banner>
+    <banner>
+      <name>shine above the competition</name>
+      <body></body>
+      <imagePath>flash_pics4.png</imagePath>
+    </banner>
+    <banner>
+      <name>it is never too late to carve your niche in the marketplace</name>
+      <body></body>
+      <imagePath>flash_pics5.png</imagePath>
+    </banner>
+	    <banner>
+      <name>reach out to potential customers</name>
+      <body></body>
+      <imagePath>flash_pics6.png</imagePath>
+    </banner>
+  </banners>
+</rotator>

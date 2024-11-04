@@ -1,0 +1,873 @@
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+<!--QuickKlix Static Pages Headers -->
+
+    <definition name="homeTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/staticpageheaders/homepageheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/staticFooter.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="aboutusTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/staticpageheaders/aboutusheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/staticFooter.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="careersTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/staticpageheaders/careersheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/staticFooter.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="contactusTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/staticpageheaders/contactusheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/staticFooter.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="mediaoutletTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/staticpageheaders/mediaoutletheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/staticFooter.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="productTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/staticpageheaders/productsheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/staticFooter.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="QuickKlixHome" extends="homeTiles" >
+        <put-attribute name="title" value="QuickkKlix Home | quickklix.com" />
+        <put-attribute name="body" value="/jsp/staticpages/quickklixhome.jsp" />
+        <put-attribute name="footer" value="" />
+    </definition>
+
+    <definition name="QuickKlixAboutUs" extends="aboutusTiles" >
+        <put-attribute name="title" value="QuickkKlix Aboutus | quickklix.com" />
+        <put-attribute name="body" value="/jsp/staticpages/aboutus.jsp" />
+    </definition>
+
+    <definition name="QuickKlixCareers" extends="careersTiles" >
+        <put-attribute name="title" value="QuickkKlix Careers | quickklix.com" />
+        <put-attribute name="body" value="/jsp/staticpages/careers.jsp" />
+    </definition>
+
+    <definition name="QuickKlixContactus" extends="contactusTiles" >
+        <put-attribute name="title" value="QuickkKlix Contactus | quickklix.com" />
+        <put-attribute name="body" value="/jsp/staticpages/contactus.jsp" />
+    </definition>
+
+    <definition name="QuickKlixMediaoutlet" extends="mediaoutletTiles" >
+        <put-attribute name="title" value="QuickkKlix Mediaoutlet | quickklix.com" />
+        <put-attribute name="body" value="/jsp/staticpages/mediaoutlet.jsp" />
+    </definition>
+
+    <definition name="QuickKlixProducts" extends="productTiles" >
+        <put-attribute name="title" value="QuickkKlix Products | quickklix.com" />
+        <put-attribute name="body" value="/jsp/staticpages/products.jsp" />
+    </definition>
+
+
+
+    <!--QuickKlix Login Page Header -->
+
+    <definition name="loginTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/loginandReg/loginheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/staticFooter.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="UserLogin" extends="loginTiles" >
+        <put-attribute name="title" value="User Login | quickklix.com" />
+        <put-attribute name="body" value="/jsp/loginregistration/userlogin.jsp" />
+    </definition>
+
+    <definition name="ForgotPasswordPage" extends="loginTiles" >
+        <put-attribute name="title" value="QuickkKlix Forgot Password Page | quickklix.com" />
+        <put-attribute name="body" value="/jsp/loginregistration/forgotpassword.jsp" />
+    </definition>
+
+    <definition name="PasswordChangeWithSecurityPinPage" extends="loginTiles" >
+        <put-attribute name="title" value="QuickkKlix Security PIN | quickklix.com" />
+        <put-attribute name="body" value="/jsp/loginregistration/passwordchangewithsecuritypin.jsp" />
+    </definition>
+
+    <definition name="SessionTimeOutLoginPage" extends="loginTiles" >
+        <put-attribute name="title" value="User Logout | quickklix.com" />
+        <put-attribute name="body" value="/jsp/loginregistration/logout/sessiontimeoutlogin.jsp" />
+    </definition>
+
+    <definition name="QuickKlixUserLogout" extends="loginTiles" >
+        <put-attribute name="title" value="User Logout | quickklix.com" />
+        <put-attribute name="body" value="/jsp/loginregistration/logout/quickKlixUserLogout.jsp" />
+    </definition>
+
+<!--QuickKlix Contact Pages Header -->
+
+    <definition name="conTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/loginandReg/contactheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/userContFooter.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="UserPrimaryContactInfo" extends="conTiles" >
+        <put-attribute name="title" value="User Primary Contact Info | quickklix.com" />
+        <put-attribute name="body" value="/jsp/loginregistration/userprimarycontactinfo.jsp" />
+    </definition>
+
+<!--QuickKlix Registration Pages Header -->
+
+    <definition name="regTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/loginandReg/registrationheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/staticFooter.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="UserRegistration" extends="regTiles" >
+        <put-attribute name="title" value="User Registration | quickklix.com" />
+        <put-attribute name="body" value="/jsp/loginregistration/userregistration.jsp" />
+    </definition>
+
+    <definition name="UserRegistrationSuccess" extends="regTiles" >
+        <put-attribute name="title" value="User Registration Success | quickklix.com" />
+        <put-attribute name="body" value="/jsp/loginregistration/registrationsuccess.jsp" />
+    </definition>
+
+    <definition name="UserActivationSuccess" extends="regTiles" >
+        <put-attribute name="title" value="User Activation Success | quickklix.com" />
+        <put-attribute name="body" value="/jsp/loginregistration/activationsuccess.jsp" />
+    </definition>
+
+    <definition name="AccountAlreadyActivated" extends="regTiles" >
+        <put-attribute name="title" value="Account Already Activated | quickklix.com" />
+        <put-attribute name="body" value="/jsp/loginregistration/alreadyaccountactivated.jsp" />
+    </definition>
+
+<!--QuickKlix User Landing Page Header -->
+
+    <definition name="usrLandTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/userlandinghome/userlandinghomeheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/footer.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="UserLandingHome" extends="usrLandTiles" >
+        <put-attribute name="title" value="QuickkKlix User Landing Home Page | quickklix.com" />
+        <put-attribute name="body" value="/jsp/userlanding/userlandinghome.jsp" />
+    </definition>
+
+    <!--<definition name="MediaMemberHome" extends="usrLandTiles" >
+        <put-attribute name="title" value="QuickkKlix User Landing Home Page | quickklix.com" />
+        <put-attribute name="body" value="/jsp/userlanding/userlandinghome.jsp" />
+    </definition>-->
+
+    <definition name="UserAccountSettings" extends="usrLandTiles" >
+        <put-attribute name="title" value="QuickkKlix User Landing Home Page | quickklix.com" />
+        <put-attribute name="body" value="/jsp/loginregistration/useraccountsettingssaving.jsp" />
+    </definition>
+
+<!--Media Members Display -->
+
+    <definition name="RadioRequestFormRedirection" extends="usrLandTiles" >
+        <put-attribute name="title" value="Radio Request Form | quickklix.com" />
+        <put-attribute name="body" value="/jsp/userlanding/mediamember/radioRequestForm.jsp" />
+    </definition>
+
+    <definition name="TelevisionRequestFormRedirection" extends="usrLandTiles" >
+        <put-attribute name="title" value="Television Request Form | quickklix.com" />
+        <put-attribute name="body" value="/jsp/userlanding/mediamember/televisionRequestForm.jsp" />
+    </definition>
+
+    <definition name="NewspaperRequestFormRedirection" extends="usrLandTiles" >
+        <put-attribute name="title" value="Newspaper Request Form | quickklix.com" />
+        <put-attribute name="body" value="/jsp/userlanding/mediamember/newspaperRequestForm.jsp" />
+    </definition>
+
+    <definition name="MagazineRequestFormRedirection" extends="usrLandTiles" >
+        <put-attribute name="title" value="Magazine Request Form | quickklix.com" />
+        <put-attribute name="body" value="/jsp/userlanding/mediamember/magazineRequestForm.jsp" />
+    </definition>
+
+    <definition name="OtherMediaRequestFormRedirection" extends="usrLandTiles" >
+        <put-attribute name="title" value="Other Media Request Form | quickklix.com" />
+        <put-attribute name="body" value="/jsp/userlanding/mediamember/otherMediaRequestForm.jsp" />
+    </definition>
+
+
+<!--QuickKlix Campaign Plan Page Header -->
+
+    <definition name="comPlanTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/campaignplan/campaignplanheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/footer.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="CampaignPlanRedirection" extends="comPlanTiles" >
+        <put-attribute name="title" value="QuickkKlix Campaign Plan Home Page | quickklix.com" />
+        <put-attribute name="body" value="/jsp/campaignplan/campaign/campaignhomepage.jsp" />
+    </definition>
+
+    <definition name="CampaignsCreation" extends="comPlanTiles" >
+        <put-attribute name="title" value="Campaigns Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/campaignplan/campaign/campaigncreation.jsp" />
+    </definition>
+
+    <definition name="CampaignModification" extends="comPlanTiles" >
+        <put-attribute name="title" value="Campaigns Modification | quickklix.com" />
+        <put-attribute name="body" value="/jsp/campaignplan/campaign/campaignmodification.jsp" />
+    </definition>
+
+    <definition name="OnlyCampaignsSaving" extends="comPlanTiles" >
+        <put-attribute name="title" value="Campaigns Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/campaignplan/campaign/only_campaignplansaving.jsp" />
+    </definition>
+
+    <definition name="ManageCampaignsSaving" extends="comPlanTiles" >
+        <put-attribute name="title" value="Campaigns Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/campaignplan/campaign/campaignplansaving.jsp" />
+    </definition>
+
+    <definition name="ClientsCreation" extends="comPlanTiles" >
+        <put-attribute name="title" value="Clients Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/campaignplan/client/clientcreation.jsp" />
+    </definition>
+
+    <definition name="ClientModification" extends="comPlanTiles" >
+        <put-attribute name="title" value="Clients Modification | quickklix.com" />
+        <put-attribute name="body" value="/jsp/campaignplan/client/clientmodification.jsp" />
+    </definition>
+
+    <definition name="NewCampaignClientCreation" extends="comPlanTiles" >
+        <put-attribute name="title" value="Client Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/campaignplan/client/campaignclientcreation.jsp" />
+    </definition>
+
+    <definition name="ModifyCampaignClientCreation" extends="comPlanTiles" >
+        <put-attribute name="title" value="Client Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/campaignplan/client/campaignclientmodification.jsp" />
+    </definition>
+
+    <definition name="OnlyClientsSaving" extends="comPlanTiles" >
+        <put-attribute name="title" value="Clients Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/campaignplan/client/only_clientsaving.jsp" />
+    </definition>
+
+    <definition name="ManageClientsSaving" extends="comPlanTiles" >
+        <put-attribute name="title" value="Clients Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/campaignplan/client/clientsaving.jsp" />
+    </definition>
+
+    <definition name="SendInvitation" extends="comPlanTiles" >
+        <put-attribute name="title" value="Send Invitation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/campaignplan/sendinvitation/userinvitationcreation.jsp" />
+    </definition>
+
+
+<!--QuickKlix Target Market Page Header -->
+
+    <definition name="tarMarTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/targetmarket/targetmarketheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/footer.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="TargetMarketRedirection" extends="tarMarTiles" >
+        <put-attribute name="title" value="QuickkKlix Target Market Home Page | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/tminfo/targetMarketHomeRedirection.jsp" />
+    </definition>
+
+    <definition name="TmStatesSelectByLocation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market State Selection | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/tminfo/tm_States_Selection.jsp" />
+    </definition>
+    
+    <definition name="TmDimensionCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Dimension Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/tminfo/tm_Dimension_Selection.jsp" />
+    </definition>
+    
+    <definition name="TmDimensionModification" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Dimension Modification | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/tminfo/tm_Dimension_Selection_Modification.jsp" />
+    </definition>
+
+    <definition name="TmStatesSaving" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/tminfo/targetMarket_Saving.jsp" />
+    </definition>
+    
+<!--TM Dimensions Tiles-->     
+    
+    <definition name="TmAbilityToSpeakEnglishCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Ability To Speak English Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_AbilityToSpeakEnglish_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmAgeCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Age Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_Age_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmAncestryCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Ancestry Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_Ancestry_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmCitizenshipCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Citizenship Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_Citizenship_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmClassOfWorkerCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Class Of Worker Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_ClassOfWorker_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmEducationCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Education Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_Education_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmGenderCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Gender Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_Gender_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmIncomeCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Income Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_Income_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmIndustryCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Industry Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_Industry_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmLanguageSpokenAtHomeCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Language Spoken At Home Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_LanguageSpokenAtHome_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmMaritalStatusCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Marital Status Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_MaritalStatus_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmMeansOfTransportationCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Means Of Transportation Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_MeansOfTransportation_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmMigrationStatusCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Migration Status Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_MigrationStatus_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmOccupationCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Occupation Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_Occupation_Creation.jsp" />
+    </definition>
+    
+    <definition name="TmRaceCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market RaceCreation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/dimensions/tm_Race_Creation.jsp" />
+    </definition>
+    
+<!--TM Saving Tiles-->     
+    
+    <definition name="tmCreationWithCpAndCl" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/tminfo/tm_Creation_With_CP_And_CL.jsp" />
+    </definition>
+    
+    <definition name="TmClientCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Client Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/CpAndCl/tm_ClientCreation.jsp" />
+    </definition>
+    
+    <definition name="TmCampaignCreation" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Campaign Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/CpAndCl/tm_CampaignCreation.jsp" />
+    </definition>
+    
+    <definition name="tmUpdationWithCpAndCl" extends="tarMarTiles" >
+        <put-attribute name="title" value="Target Market Modification | quickklix.com" />
+        <put-attribute name="body" value="/jsp/targetmarket/tminfo/tm_Modification_With_CP_And_CL.jsp" />
+    </definition>
+    
+    
+    
+
+
+<!--QuickKlix Media Plan Page Header -->
+
+    <definition name="medPlanTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/mediaplan/mediaplanheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/footer.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="MediaPlanHomeRedirection" extends="medPlanTiles" >
+        <put-attribute name="title" value="Media Plan Home | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/mediaplaninfo/mediaPlanHome.jsp" />
+    </definition>
+
+    <definition name="MediaPlanSaving" extends="medPlanTiles" >
+        <put-attribute name="title" value="Media Plan Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/mediaplaninfo/mediaPlanSaving.jsp" />
+    </definition>
+
+    <definition name="MediaPlanCreation" extends="medPlanTiles" >
+        <put-attribute name="title" value="Media Plan Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/mediaplaninfo/mediaPlanCreation.jsp" />
+    </definition>
+
+    <definition name="MediaPlanModification" extends="medPlanTiles" >
+        <put-attribute name="title" value="Media Plan Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/mediaplaninfo/mediaPlanModification.jsp" />
+    </definition>
+
+    <definition name="MediaPlanClientCreation" extends="medPlanTiles" >
+        <put-attribute name="title" value="Client Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/mediaplaninfo/CpAndCl/mediaplanClientCreation.jsp" />
+    </definition>
+
+    <definition name="MediaPlanCampaignCreation" extends="medPlanTiles" >
+        <put-attribute name="title" value="Campaign Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/mediaplaninfo/CpAndCl/mediaplanCampaignCreation.jsp" />
+    </definition>
+
+    <definition name="MediaPlanTargetMarketCreation" extends="medPlanTiles" >
+        <put-attribute name="title" value="Campaign Creation | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/mediaplaninfo/CpAndCl/mediaplanTargetMarketCreation.jsp" />
+    </definition>
+
+
+
+
+<!--QuickKlix All Medias Page Header -->
+
+    <definition name="mediasTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/mediaplan/allMediasHeader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/footer.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="AllMediasDataSaving" extends="mediasTiles" >
+        <put-attribute name="title" value="All Medias Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/mediaplaninfo/allMediasSaving.jsp" />
+    </definition>
+
+<!--Newspapers tiles-->
+
+    <definition name="NewspaperRedirection" extends="mediasTiles" >
+        <put-attribute name="title" value="Manage Newspaper | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/newspapers/newspapersRedirection.jsp" />
+    </definition>
+
+    <definition name="NewspapersSelectbyLocation" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Location - Newspapers | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/newspapers/newspapers_State_Selection.jsp" />
+    </definition>
+
+    <definition name="NewspapersCitySelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by City - Newspapers | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/newspapers/newspapers_City_Selection.jsp" />
+    </definition>
+
+    <definition name="NewspapersNamesSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Newspapers Name - Newspapers | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/newspapers/newspapers_Name_Selection.jsp" />
+    </definition>
+
+    <definition name="NewspapersContactInfoSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Address - Newspapers | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/newspapers/newspapers_ContactInfo_Selection.jsp" />
+    </definition>
+
+    <definition name="NewspapersDataSaving" extends="mediasTiles" >
+        <put-attribute name="title" value="Newspapers Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/newspapers/newspapers_Data_Saving.jsp" />
+    </definition>
+
+    <definition name="Top100NewspapersSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Address - Top 100 Newspapers | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/newspapers/newspapers_Top100_Selection.jsp" />
+    </definition>
+
+    <definition name="NewspapersModification" extends="mediasTiles" >
+        <put-attribute name="title" value="Newspapers Modification | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/newspapers/newspapers_Data_Modification.jsp" />
+    </definition>
+
+<!--Magazines Tiles-->
+
+    <definition name="MediaPlanMagazineRedirection" extends="mediasTiles" >
+        <put-attribute name="title" value="Magazines | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/magazines/magazinesRedirection.jsp" />
+    </definition>
+
+    <definition name="MgCategoryRedirection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Category - Magazines | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/magazines/magazines_Category_Selection.jsp" />
+    </definition>
+
+    <definition name="MgNameRedirection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Magazines Name - Magazines | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/magazines/magazines_Name_Selection.jsp" />
+    </definition>
+
+    <definition name="MgContactInfoRedirection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Address - Magazines | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/magazines/magazines_ContactInfo_Selection.jsp" />
+    </definition>
+
+    <definition name="MgDataSavingRedirection" extends="mediasTiles" >
+        <put-attribute name="title" value="Media Plan Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/magazines/magazines_Data_Saving.jsp" />
+    </definition>
+
+    <definition name="Top100MgContactRedirection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Address - Top 100 Magazines | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/magazines/magazines_Top100_Selection.jsp" />
+    </definition>
+
+    <definition name="magazinesModification" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Address Modification- Magazines | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/magazines/magazines_Data_Modification.jsp" />
+    </definition>
+
+<!--Radio tiles-->
+
+    <definition name="RadioRedirection" extends="mediasTiles" >
+        <put-attribute name="title" value="Manage Radio | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/radio/radioRedirection.jsp" />
+    </definition>
+
+    <definition name="RadioSelectbyLocation" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Location - Radio | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/radio/radio_State_Selection.jsp" />
+    </definition>
+
+    <definition name="RadioCitySelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by City - Radio | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/radio/radio_City_Selection.jsp" />
+    </definition>
+
+    <definition name="RadioStationNameSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Radio Station - Radio | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/radio/radio_Name_Selection.jsp" />
+    </definition>
+
+    <definition name="RadioContactInfoSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Address - Radio | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/radio/radio_ContactInfo_Selection.jsp" />
+    </definition>
+
+    <definition name="RadioDataSaving" extends="mediasTiles" >
+        <put-attribute name="title" value="Radio Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/radio/radio_Data_Saving.jsp" />
+    </definition>
+
+    <definition name="RadioFormatStateSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by State - Radio | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/radio/radio_Format_State_Selection.jsp" />
+    </definition>
+
+    <definition name="RadioFormatCitySelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by City - Radio | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/radio/radio_Format_City_Selection.jsp" />
+    </definition>
+
+    <definition name="RadioFormatStationNameSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Radio Station - Radio | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/radio/radio_Format_Name_Selection.jsp" />
+    </definition>
+
+    <definition name="RadioFormatContactInfoSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Address - Radio | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/radio/radio_Format_ContactInfo_Selection.jsp" />
+    </definition>
+
+    <definition name="RadioModification" extends="mediasTiles" >
+        <put-attribute name="title" value="Radio Modification | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/radio/radio_Data_Modification.jsp" />
+    </definition>
+    
+    <definition name="RadioFormatSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Format - Radio | quickklix.com" />
+        <put-attribute name="header" value="/jsp/layouts/mediaplan/allMediasPieChartHeader.jsp"/>
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/radio/radio_Format_Selection.jsp" />
+    </definition>
+
+<!--TV Tiles-->
+
+    <definition name="TelevisionRedirection" extends="mediasTiles" >
+        <put-attribute name="title" value="Manage Television | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/television/tvRedirection.jsp" />
+    </definition>
+
+    <definition name="TVSelectbyLocation" extends="mediasTiles" >
+        <put-attribute name="title" value="Manage Television | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/television/tv_State_Selection.jsp" />
+    </definition>
+
+    <definition name="TVCitySelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by City - Television | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/television/tv_City_Selection.jsp" />
+    </definition>
+
+    <definition name="TVNamesSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Television Name - Television | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/television/tv_Name_Selection.jsp" />
+    </definition>
+
+    <definition name="TVContactInfoSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Address - Television | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/television/tv_ContactInfo_Selection.jsp" />
+    </definition>
+    
+    <definition name="TVNetworkContactInfoSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Address - Television | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/television/tv_Network_ContactInfo_Selection.jsp" />
+    </definition>
+
+    <definition name="TVContactInfoSaving" extends="mediasTiles" >
+        <put-attribute name="title" value="Television - Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/television/tv_Data_Saving.jsp" />
+    </definition>
+
+    <definition name="TVContactInfoModification" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Address - Television | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/television/tv_Data_Modification.jsp" />
+    </definition>
+
+    <definition name="TVSelectbyLocationInNetwork" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Network - Television | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/television/tv_Network_State_Selection.jsp" />
+    </definition>
+
+    <definition name="TvNetworkByCitySelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Network - Television | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/television/tv_Network_City_Selection.jsp" />
+    </definition>
+
+    <definition name="TvNetworkByNameSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Network - Television | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/television/tv_Network_Name_Selection.jsp" />
+    </definition>
+    
+    <definition name="TVNetworkRedirection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Network - Television | quickklix.com" />
+        <put-attribute name="header" value="/jsp/layouts/mediaplan/allMediasPieChartHeader.jsp"/>
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/television/tv_Network_Redirection.jsp" />
+    </definition>
+
+<!--Internet tiles-->
+
+    <definition name="InternetRedirection" extends="mediasTiles" >
+        <put-attribute name="title" value="Manage Internet | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/internet/internetRedirection.jsp" />
+    </definition>
+
+    <definition name="TopInternetSitesInUS" extends="mediasTiles" >
+        <put-attribute name="title" value="Top Internet Sites in the US - Internet| quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/internet/internet_US_Top_Sites_Redirection.jsp" />
+    </definition>
+
+    <definition name="USTopInternetSitesByRankContactInfo" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Address - Top Internet Sites in the US by Rank | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/internet/Internet_US_ByRank_ContactInfo_Selection.jsp" />
+    </definition>
+
+    <definition name="InternetCategoryWebsiteNameSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Website Name - Top Internet Sites in the US by Category | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/internet/internet_US_Category_WebsiteName_Selection.jsp" />
+    </definition>
+
+    <definition name="USTopInternetSitesByCategoryContactInfo" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Address - Top Internet Sites in the US by Category | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/internet/Internet_US_ByCategory_ContactInfo_Selection.jsp" />
+    </definition>
+
+    <definition name="InternetUSDataSaving" extends="mediasTiles" >
+        <put-attribute name="title" value="Internet US Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/internet/internet_US_Data_Saving.jsp" />
+    </definition>
+
+    <definition name="InternetWorldWideDataSaving" extends="mediasTiles" >
+        <put-attribute name="title" value="Internet World Wide Saving | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/internet/internet_WordWide_Data_Saving.jsp" />
+    </definition>
+
+    <definition name="TopInternetSitesInWorld" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Address - Top Internet Sites in the World by Rank | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/internet/internet_WorldWide_ContactInfo_Selection.jsp" />
+    </definition>
+
+    <definition name="InternetUSSitesModification" extends="mediasTiles" >
+        <put-attribute name="title" value="Internet US Modification | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/internet/internet_US_Data_Modification.jsp" />
+    </definition>
+
+    <definition name="InternetWorldWideSitesModification" extends="mediasTiles" >
+        <put-attribute name="title" value="Internet World Wide Modification | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/internet/internet_WorldWide_Data_Modification.jsp" />
+    </definition>
+    
+    <definition name="InternetUSCategorySelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Category - Top Internet Sites in the US | quickklix.com" />
+        <put-attribute name="header" value="/jsp/layouts/mediaplan/allMediasPieChartHeader.jsp"/>
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/internet/internet_US_Category_Selection.jsp" />
+    </definition>
+
+<!--Mobile Apps Tiles-->
+
+    <definition name="MobileAppsRedirection" extends="mediasTiles" >
+        <put-attribute name="title" value="Mobile Apps | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/mobileapps/mobileAppRedirection.jsp" />
+    </definition>
+
+    <definition name="SelectByMobileAppCategory" extends="mediasTiles" >
+        <put-attribute name="title" value="Mobile Apps | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/mobileapps/mobileApp_Name_Selection.jsp" />
+    </definition>
+
+    <definition name="SelectByMobileAppOSCategory" extends="mediasTiles" >
+        <put-attribute name="title" value="Mobile Apps | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/mobileapps/mobileApp_OS_Selection.jsp" />
+    </definition>
+
+    <definition name="MobileAppsNameSelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Mobile Apps | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/mobileapps/mobileApp_ContactInfo_Selection.jsp" />
+    </definition>
+
+    <definition name="MobileAppContactInfoSaving" extends="mediasTiles" >
+        <put-attribute name="title" value="Mobile Apps | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/mobileapps/mobileApps_Data_Saving.jsp" />
+    </definition>
+
+    <definition name="MAppsContactInfoModification" extends="mediasTiles" >
+        <put-attribute name="title" value="Mobile Apps | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/mobileapps/mobileApps_Data_Modification.jsp" />
+    </definition>
+
+    <definition name="MobileAppsOsRedirection" extends="mediasTiles" >
+        <put-attribute name="title" value="Mobile Apps | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/mobileapps/mobileAppSelectByOSRedirection.jsp" />
+    </definition>
+
+    <definition name="MAppsselectedOperatingSystem" extends="mediasTiles" >
+        <put-attribute name="title" value="Mobile Apps | quickklix.com" />
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/mobileapps/mobileApp_OperatingSystems_Selection.jsp" />
+    </definition>
+    
+    <definition name="MobileAppsCategorySelection" extends="mediasTiles" >
+        <put-attribute name="title" value="Select by Apps Category - Mobile Apps | quickklix.com" />
+        <put-attribute name="header" value="/jsp/layouts/mediaplan/allMediasPieChartHeader.jsp"/>
+        <put-attribute name="body" value="/jsp/mediaplan/allmedias/mobileapps/mobileApp_Category_Selection.jsp" />
+    </definition>
+
+
+<!--QuickKlix Reports Page Header -->
+
+    <definition name="repTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/reports/reportsheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/footer.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="ReportsRedirection" extends="repTiles" >
+        <put-attribute name="title" value="QuickkKlix Reports Home Page | quickklix.com" />
+        <put-attribute name="body" value="/jsp/reports/reportsinfo/reports_Redirection.jsp" />
+    </definition>
+    
+<!--QuickKlix User Reports Page Header -->
+
+    <definition name="userRepTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/reports/userreportsheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/footer.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>    
+    
+<!-- User Reports tiles -->   
+
+    <definition name="UserReportsRedirection" extends="userRepTiles" >
+        <put-attribute name="title" value="QuickkKlix User Reports | quickklix.com" />
+        <put-attribute name="body" value="/jsp/reports/userreports/campaigns_per_ Client.jsp" />
+    </definition>
+
+
+<!--QuickKlix Analytics Page Header -->
+
+    <definition name="anyTiles" template="/jsp/layouts/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/jsp/layouts/analytics/analyticsheader.jsp"/>
+        <put-attribute name="footer" value="/jsp/layouts/footer.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="left" value="" />
+        <put-attribute name="right" value="" />
+    </definition>
+
+    <definition name="AnalyticsRedirection" extends="anyTiles" >
+        <put-attribute name="title" value="QuickkKlix Analytics Home Page | quickklix.com" />
+        <put-attribute name="body" value="/jsp/analytics/analyticssaving.jsp" />
+    </definition>
+
+
+</tiles-definitions>

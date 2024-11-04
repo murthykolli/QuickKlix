@@ -1,0 +1,35 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.bmf.quickklix.ui.util;
+
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ModelDriven;
+import org.apache.log4j.Logger;
+import java.util.*;
+
+public class SessionAction extends ActionSupport implements ModelDriven {
+
+    SessionBean bean = new SessionBean();
+
+    public SessionAction() {
+    }
+
+    public Object getModel() {
+        return bean;
+    }
+
+    // Execute method for Email address to bean Assistance Step2 Page
+    @Override
+    public String execute() {
+        Map session = ActionContext.getContext().getSession();
+        bean.setUserName((String) session.get("userName"));
+        bean.setUserType((String) session.get("userType"));
+        bean.setFirstName((String) session.get("firstName"));
+
+        return SUCCESS;
+    }
+}
+

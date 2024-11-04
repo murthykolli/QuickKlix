@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/QuickKlix">
+
+  <Resource auth="Container" driverClassName="org.postgresql.Driver" maxActive="50" name="jdbc/MediaDB" password="mf0rt3*" type="javax.sql.DataSource"
+  url="jdbc:postgresql://192.168.12.12:5432/Quickklix" username="postgres"/>
+
+
+<!--  <Resource auth="Container" driverClassName="org.postgresql.Driver" maxActive="50" name="jdbc/MediaDB" password="media123*" type="javax.sql.DataSource"
+  url="jdbc:postgresql://192.168.12.141:5432/Quickklix" username="postgres"/>-->
+
+  
+
+       <!--<Resource name="jdbc/MediaDB" auth="Container"
+       type="javax.sql.DataSource"
+       username="postgres" password="legalnod@9.1"
+       driverClassName="org.postgresql.Driver"
+       url="jdbc:postgresql://10.152.165.136:5432/LegalNod1"
+       maxActive="200"/>-->
+
+      
+</Context>

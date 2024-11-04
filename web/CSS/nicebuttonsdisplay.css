@@ -1,0 +1,80 @@
+/*
+    Document   : nicebuttonsdisplay
+    Created on : 3 Jan, 2012, 7:18:39 PM
+    Author     : narayanak
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+input[type=text], input[type=password], textarea {
+	background: white;
+	border: solid 1px #7F7F7F;
+        height: 19px;
+        
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+        -khtml-border-radius: 5px;
+        border-radius: 5px;
+        
+        -webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
+        -moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
+        box-shadow: inset 2px 2px 2px 0px #dddddd;
+        
+
+
+}
+
+input[type=reset], input[type=submit] {
+	font-weight: bold;
+	color: #fff;
+        background: #6f6e6e repeat-x 0 -91px;
+	border: solid 1px #575757;
+        
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+        -khtml-border-radius: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+}
+input[type=reset]:hover, input[type=submit]:hover {
+        background: #00a9f1 repeat-x;
+	border: solid 1px #00a9f3;
+        cursor: pointer;
+}
+
+
+
+
+button[type=text], button[type=password], textarea {
+	background: white;
+	border: solid 1px #7F7F7F;
+        height: 20px;
+
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+        -khtml-border-radius: 7px;
+        border-radius: 7px;
+}
+
+button[type=reset], button[type=button] {
+	font-weight: bold;
+	color: #fff;
+        background: #919678 repeat-x;
+	border: solid 1px #6e7b34;
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+        -khtml-border-radius: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+}
+button[type=reset]:hover, button[type=button]:hover {
+        background: #4466a3 repeat-x 0 -91px;
+	border: solid 1px #4466a3;
+        cursor: pointer;
+}
+
+

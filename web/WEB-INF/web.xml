@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <context-param>
+        <param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
+        <param-value>/WEB-INF/tiles.xml</param-value>
+    </context-param>
+    
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <listener>
+        <listener-class>org.apache.tiles.web.startup.TilesListener</listener-class>
+    </listener>
+    
+    <servlet>
+        <servlet-name>Log4JInit</servlet-name>
+        <servlet-class>com.bmf.quickklix.core.servlet.Log4JInit</servlet-class>
+        <init-param>
+            <param-name>log4j-init-file</param-name>
+            <param-value>WEB-INF/Log4j.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>DBConnectionPool</servlet-name>
+        <servlet-class>com.bmf.quickklix.core.servlet.DBConnectionPool</servlet-class>
+        <init-param>
+            <param-name>dataSourceName</param-name>
+            <param-value>java:/comp/env/jdbc/MediaDB</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>ActivateUser</servlet-name>
+        <servlet-class>com.bmf.quickklix.core.servlet.ActivateUser</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>sendInvitator</servlet-name>
+        <servlet-class>com.bmf.quickklix.core.servlet.SendInvitationUser</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>com.bmf.quickklix.core.servlet.Logout</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/logoutuser.ser</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>QuickklixPageReceiver</servlet-name>
+        <servlet-class>com.bmf.quickklix.core.servlet.QuickklixPageReceiver</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>ReportPageForward</servlet-name>
+        <servlet-class>com.bmf.quickklix.core.servlet.ReportPageForward</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ActivateUser</servlet-name>
+        <url-pattern>/userID.sevt</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>sendInvitator</servlet-name>
+        <url-pattern>/sendInvitator.sevt</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>QuickklixPageReceiver</servlet-name>
+        <url-pattern>/quickklixPageRreceiver.serv</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>ReportPageForward</servlet-name>
+        <url-pattern>/reportsPageForward.serv</url-pattern>
+    </servlet-mapping>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/errorpages/pagenotfound.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <error-code>500</error-code>
+        <location>/errorpages/pagenotfound.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/errorpages/pagenotfound.jsp</location>
+    </error-page>
+    
+    <session-config>
+        <session-timeout>
+            60
+        </session-timeout>
+    </session-config>
+    
+</web-app>

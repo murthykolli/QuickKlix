@@ -1,0 +1,82 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.bmf.quickklix.core.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+import org.apache.log4j.Logger;
+
+/**
+ *
+ * @author varaprasads
+ */
+public class PageReceiver extends HttpServlet {
+
+    Logger log = Logger.getLogger(PageReceiver.class);
+
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+
+        PrintWriter out = response.getWriter();
+
+        String userName = request.getParameter("userName");
+        HttpSession sn = request.getSession();
+        sn.setAttribute("userName", userName);
+
+        String firstName = request.getParameter("firstName");
+        sn.setAttribute("firstName", firstName);
+
+        String userType = request.getParameter("userType");
+        sn.setAttribute("userType", userType);
+
+        String page = request.getParameter("page");
+
+
+        //sn.setAttribute("userType", userType);
+
+        if (page.equals("aboutUs")) {
+            response.sendRedirect("/QuickKlix/Aboutus.action");
+        } else if (page.equals("salesTeam")) {
+            response.sendRedirect("/QuickKlix/SalesTeam.action");
+        } else if (page.equals("mgmTeam")) {
+            response.sendRedirect("/QuickKlix/MgmtTeam.action");
+        } else if (page.equals("board")) {
+            response.sendRedirect("/QuickKlix/Board.action");
+        } else if (page.equals("Culture")) {
+            response.sendRedirect("/QuickKlix/Culture.action");
+        } else if (page.equals("HomeProducts")) {
+            response.sendRedirect("/QuickKlix/HomeProducts.action");
+        } else if (page.equals("Campaign")) {
+            response.sendRedirect("/QuickKlix/Campaign.action");
+        } else if (page.equals("Mediaplan")) {
+            response.sendRedirect("/QuickKlix/Mediaplan.action");
+        } else if (page.equals("Mediabuy")) {
+            response.sendRedirect("/QuickKlix/Mediabuy.action");
+        } else if (page.equals("Analytics")) {
+            response.sendRedirect("/QuickKlix/Analytics.action");
+        } else if (page.equals("Careers")) {
+            response.sendRedirect("/QuickKlix/Careers.action");
+        } else if (page.equals("Sales")) {
+            response.sendRedirect("/QuickKlix/Sales.action");
+        } else if (page.equals("Other")) {
+            response.sendRedirect("/QuickKlix/Other.action");
+        } else if (page.equals("Contactus")) {
+            response.sendRedirect("/QuickKlix/Contactus.action");
+        } else {
+            response.sendRedirect("/QuickKlix/Home.action");
+        }
+
+    }
+
+    @Override
+    public void doPost(HttpServletRequest request,
+            HttpServletResponse response)
+            throws ServletException, IOException {
+        doGet(request, response);
+    }
+}

@@ -1,0 +1,88 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.bmf.quickklix.ui.util;
+
+import com.opensymphony.xwork2.ActionSupport;
+import java.util.*;
+import com.opensymphony.xwork2.ActionContext;
+import org.apache.log4j.Logger;
+
+/**
+ *
+ * @author varaprasads
+ */
+public class Navigation extends ActionSupport {
+
+    Logger log = Logger.getLogger(Navigation.class);
+
+    public String userLanding() {
+        Map session = ActionContext.getContext().getSession();
+        session.put("page", "userLanding");
+        return SUCCESS;
+    }
+
+    public String manageCampaigns() {
+        Map session = ActionContext.getContext().getSession();
+        session.put("page", "manageCampaigns");
+        return SUCCESS;
+
+    }
+
+    public String manageClients() {
+        Map session = ActionContext.getContext().getSession();
+        session.put("page", "manageClients");
+        return SUCCESS;
+    }
+
+    public String addClients() {
+        Map session = ActionContext.getContext().getSession();
+        session.put("page", "addClients");
+        return SUCCESS;
+    }
+
+    public String targetMarket() {
+        Map session = ActionContext.getContext().getSession();
+        session.put("page", "targetMarket");
+        return SUCCESS;
+    }
+
+    public String addCampaign() {
+        Map session = ActionContext.getContext().getSession();
+        session.put("page", "addCampaigns");
+        return SUCCESS;
+    }
+
+    public String addUser() {
+        Map session = ActionContext.getContext().getSession();
+        session.put("page", "addUser");
+        return SUCCESS;
+    }
+
+    public String manageUser() {
+        Map session = ActionContext.getContext().getSession();
+        session.put("page", "manageUser");
+        return SUCCESS;
+    }
+
+    public String editUserInfo() {
+        Map session = ActionContext.getContext().getSession();
+        session.put("page", "userInfo");
+        return SUCCESS;
+    }
+
+    public String login() {
+        Map session = ActionContext.getContext().getSession();
+        session.put("page", "login");
+        return SUCCESS;
+
+    }
+
+    public String logout() {
+        Map session = ActionContext.getContext().getSession();
+        session.put("page", "logout");
+        return SUCCESS;
+
+    }
+}

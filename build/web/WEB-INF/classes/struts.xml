@@ -1,0 +1,1104 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<!--    <constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+    <constant name="struts.multipart.maxSize" value="52428800" />-->
+<package name="default" extends="struts-default" namespace="/">
+        <result-types>
+        <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
+</package>
+
+<package name="com.bmf.quickklix.ui.userinformation" extends="struts-default" namespace="/">
+        <result-types>
+        <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
+
+<!-- Registration of Legal WebSite -->
+
+    <action name="homePage" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result name="success" type="tiles">QuickKlixHome</result>
+    </action>
+
+    <action name="aboutusPage" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result name="success" type="tiles">QuickKlixAboutUs</result>
+    </action>
+
+    <action name="careersPage" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result name="success" type="tiles">QuickKlixCareers</result>
+    </action>
+
+    <action name="contactusPage" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result name="success" type="tiles">QuickKlixContactus</result>
+    </action>
+
+    <action name="contactInfo" class="com.bmf.quickklix.ui.userinformation.LoginAction" method="contactUsEmailSending">
+        <result name="contactUSPage" type="tiles">QuickKlixContactus</result>
+    </action>
+
+    <action name="mediaoutletPage" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result name="success" type="tiles">QuickKlixMediaoutlet</result>
+    </action>
+
+    <action name="productsPage" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result name="success" type="tiles">QuickKlixProducts</result>
+    </action>
+
+    <action name="quickklixLogin" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result name="success" type="tiles">UserLogin</result>
+    </action>
+
+    <action name="forgotPassword" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result name="success" type="tiles">ForgotPasswordPage</result>
+    </action>
+
+    <action name="pinPasswordChange" class="com.bmf.quickklix.ui.userinformation.LoginAction" method="forgotPassword">
+        <result name="success" type="tiles">PasswordChangeWithSecurityPinPage</result>
+        <result name="input" type="tiles">ForgotPasswordPage</result>
+    </action>
+
+    <action name="passwordChangeWithSecPIN" class="com.bmf.quickklix.ui.userinformation.LoginAction" method="PasswordChangeWithSecPin">
+        <result name="goToLoginPage" type="tiles">UserLogin</result>
+        <result name="input" type="tiles">PasswordChangeWithSecurityPinPage</result>
+    </action>
+
+    <action name="userRegistration" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result name="success" type="tiles">UserRegistration</result>
+    </action>
+
+    <action name="activateEmail" class="com.bmf.quickklix.ui.userinformation.LoginAction" method="userEmailActivation">
+        <result name="success" type="tiles">UserLogin</result>
+    </action>
+
+    <action name="registrationDataSaving" class="com.bmf.quickklix.ui.userinformation.LoginAction" method="userRegistration">
+        <result name="goToSuccess" type="tiles">UserRegistrationSuccess</result>
+        <result name="input" type="tiles">UserRegistration</result>
+    </action>
+   
+    <action name="loginaction" class="com.bmf.quickklix.ui.userinformation.LoginAction" method="userLoginVerification">
+        <result name="goToUserLandingHome" type="tiles">UserLandingHome</result>
+        <result name="input" type="tiles">UserLogin</result>
+        <result name="goToPrimaryContact" type="tiles">UserPrimaryContactInfo</result>
+        <!--<result name="goToMediaMember" type="tiles">MediaMemberHome</result>-->
+    </action>
+
+    <action name="userContactAndMediaInfoSaving" class="com.bmf.quickklix.ui.userinformation.LoginAction" method="primaryContactInformation">
+        <result name="goToUserLandingHome" type="tiles">UserLandingHome</result>
+        <result name="input" type="tiles">UserPrimaryContactInfo</result>
+    </action>
+
+    <action name="userLandingHome" class="com.bmf.quickklix.ui.userinformation.LoginAction" method="userLandingHomeData">
+        <result name="goToUserLandingHome" type="tiles">UserLandingHome</result>
+    </action>
+
+<!-- Error Pages -->
+
+    <action name="registrationSuccess">
+        <result type="tiles">UserActivationSuccess</result>
+    </action>
+
+    <action name="accountAlreadyActivated">
+        <result type="tiles">AccountAlreadyActivated</result>
+    </action>
+
+    <action name="userAccountSettings" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result name="success" type="tiles">UserAccountSettings</result>
+    </action>
+
+    <action name="passwordModification" class="com.bmf.quickklix.ui.userinformation.LoginAction" method="changePassword">
+        <result name="success" type="tiles">UserAccountSettings</result>
+    </action>
+
+    <action name="primaaryContactModification" class="com.bmf.quickklix.ui.userinformation.LoginAction" method="editPrimaryContactInformation">
+        <result name="success" type="tiles">UserAccountSettings</result>
+    </action>
+
+    <action name="sessionTimeOut" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result name="success" type="tiles">SessionTimeOutLoginPage</result>
+    </action>
+
+    <action name="userLogout" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result>/logoutuser.ser</result>
+    </action>
+
+    <action name="userLogoutRedirection" class="com.bmf.quickklix.ui.userinformation.LoginAction" method="userLogout">
+        <result type="redirect">/jsp/loginregistration/logout/redirectLogOut.jsp</result>
+    </action>
+
+    <action name="userLogoutForward" class="com.bmf.quickklix.ui.userinformation.LoginAction" method="userLogout">
+        <result type="tiles">QuickKlixUserLogout</result>
+    </action>
+
+    <action name="termsAndConditionsPopup" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result name="success">/jsp/staticpages/termsandconditionspopup.jsp</result>
+    </action>
+
+    <action name="privacyPolicyPopup" class="com.bmf.quickklix.ui.userinformation.LoginAction">
+        <result name="success">/jsp/staticpages/privacypolicypopup.jsp</result>
+    </action>
+    
+
+<!--Media Member Actions-->
+
+    <action name="radioRequestForm" class="com.bmf.quickklix.ui.userinformation.MediaMemberAction" method="radioStationRequestFormRedirection">
+        <result name="success" type="tiles">RadioRequestFormRedirection</result>
+    </action>
+
+    <action name="radioRequestFormSavingAndUpdating" class="com.bmf.quickklix.ui.userinformation.MediaMemberAction" method="radioStationRequestFormSavingAndUpdating">
+        <result name="radioRequestFormSaving" type="tiles">RadioRequestFormRedirection</result>
+    </action>
+
+    <action name="televisionRequestForm" class="com.bmf.quickklix.ui.userinformation.MediaMemberAction" method="tvStationRequestFormRedirection">
+        <result name="success" type="tiles">TelevisionRequestFormRedirection</result>
+    </action>
+
+    <action name="televisionRequestFormSavingAndUpdating" class="com.bmf.quickklix.ui.userinformation.MediaMemberAction" method="tvStationRequestFormSavingAndUpdating">
+        <result name="tvRequestFormSaving" type="tiles">TelevisionRequestFormRedirection</result>
+    </action>
+
+    <action name="newspaperRequestForm" class="com.bmf.quickklix.ui.userinformation.MediaMemberAction" method="newspaperRequestFormRedirection">
+        <result name="success" type="tiles">NewspaperRequestFormRedirection</result>
+    </action>
+
+    <action name="newspaperRequestFormSavingAndUpdating" class="com.bmf.quickklix.ui.userinformation.MediaMemberAction" method="newspaperRequestFormSavingAndUpdating">
+        <result name="newspaperRequestFormSaving" type="tiles">NewspaperRequestFormRedirection</result>
+    </action>
+
+    <action name="magazineRequestForm" class="com.bmf.quickklix.ui.userinformation.MediaMemberAction" method="magazineRequestFormRedirection">
+        <result name="success" type="tiles">MagazineRequestFormRedirection</result>
+    </action>
+
+    <action name="magazineRequestFormSavingAndUpdating" class="com.bmf.quickklix.ui.userinformation.MediaMemberAction" method="magazineRequestFormSavingAndUpdating">
+        <result name="magazineRequestFormSaving" type="tiles">MagazineRequestFormRedirection</result>
+    </action>
+
+    <action name="otherMediaRequestForm" class="com.bmf.quickklix.ui.userinformation.MediaMemberAction" method="otherMediaRequestFormRedirection">
+        <result name="success" type="tiles">OtherMediaRequestFormRedirection</result>
+    </action>
+
+    <action name="otherMediaRequestFormSavingAndUpdating" class="com.bmf.quickklix.ui.userinformation.MediaMemberAction" method="otherMediaRequestFormSavingAndUpdating">
+        <result name="otherMediaRequestFormSaving" type="tiles">OtherMediaRequestFormRedirection</result>
+    </action>
+    
+
+</package>
+
+<!--Campaign Plan Package-->
+
+<package name="com.bmf.quickklix.ui.campaignplan" extends="struts-default,json-default" namespace="/">
+    <result-types>
+    <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+    </result-types>
+
+<!-- Campaign Plan Actions -->
+
+    <action name="campaignPlanRedirection" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction" method="campaignPlanRedirection">
+        <result name="goToCampaignHome" type="tiles">CampaignPlanRedirection</result>
+        <result name="goToClientManagement" type="tiles">OnlyClientsSaving</result>
+        <result name="goToCampaignManagement" type="tiles">OnlyCampaignsSaving</result>
+        <result name="goToBothManagement" type="tiles">ManageCampaignsSaving</result>
+    </action>
+
+    <action name="campaignCreation" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction" method="campaignCreation">
+        <result name="goToCampaignHome" type="tiles">CampaignPlanRedirection</result>
+        <result name="goToCampaignCreation" type="tiles">CampaignsCreation</result>
+    </action>
+
+    <action name="campaignCreationDetailsSaving" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction" method="campaignDataSaving">
+        <result name="goToCampaignHome" type="tiles">CampaignPlanRedirection</result>        
+        <result name="goToCampaignManagement" type="tiles">OnlyCampaignsSaving</result>
+        <result name="goToBothManagement" type="tiles">ManageCampaignsSaving</result>
+        <result name="input" type="tiles">CampaignsCreation</result>
+    </action>
+
+    <action name="manageCampaignsSaving" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction" method="manageCampaignsSaving">
+        <result name="goToCampaignHome" type="tiles">CampaignPlanRedirection</result>
+        <result name="goToCampaignCreation" type="tiles">CampaignsCreation</result>
+        <result name="goToCampaignManagement" type="tiles">OnlyCampaignsSaving</result>
+        <result name="goToBothManagement" type="tiles">ManageCampaignsSaving</result>
+    </action>
+
+    <action name="campaignManagementSaving" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction">
+        <result name="goToCampaignModification" type="tiles">CampaignModification</result>
+        <result name="goToCampaignHome" type="tiles">CampaignPlanRedirection</result>
+        <result name="goToCampaignCreation" type="tiles">CampaignsCreation</result>
+        <result name="goToCampaignManagement" type="tiles">OnlyCampaignsSaving</result>
+        <result name="goToBothManagement" type="tiles">ManageCampaignsSaving</result>
+        <result name="goToClientCreation" type="tiles">ClientsCreation</result>
+    </action>
+
+    <action name="campaignModificationSaving" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction" method="campaignModificationDataSaving">
+        <result name="goToCampaignManagement" type="tiles">OnlyCampaignsSaving</result>
+        <result name="goToBothManagement" type="tiles">ManageCampaignsSaving</result>
+        <result name="input" type="tiles">CampaignModification</result>
+    </action>
+
+    <action name="clientCreation" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction" method="clientCreation">
+        <result name="goToClientCreation" type="tiles">ClientsCreation</result>
+    </action>
+
+    <action name="newCampaignClientCreation" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction">
+        <result name="success" type="tiles">NewCampaignClientCreation</result>
+    </action>
+
+    <action name="modifyCampaignClientCreation" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction">
+        <result name="success" type="tiles">ModifyCampaignClientCreation</result>
+    </action>
+
+    <action name="campaignClientCreationSaving" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction" method="campaignClientDetailsSaving">
+        <result name="goToCampaignCreation" type="tiles">CampaignsCreation</result>
+        <result name="input" type="tiles">NewCampaignClientCreation</result>
+    </action>
+
+    <action name="campaignClientModificationSaving" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction" method="campaignClientModificationDetailsSaving">
+        <result name="goToCampaignModification" type="tiles">CampaignModification</result>
+        <result name="input" type="tiles">ModifyCampaignClientCreation</result>
+    </action>
+
+    <action name="clientCreationDetailsSaving" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction" method="clientDetailsSaving">
+        <result name="goToCampaignHome" type="tiles">CampaignPlanRedirection</result>
+        <result name="goToClientManagement" type="tiles">OnlyClientsSaving</result>        
+        <result name="goToBothManagement" type="tiles">ManageClientsSaving</result>
+        <result name="input" type="tiles">ClientsCreation</result>
+    </action>
+
+    <action name="manageClientsSaving" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction" method="manageClientsSaving">
+        <result name="goToCampaignHome" type="tiles">CampaignPlanRedirection</result>
+        <result name="goToClientManagement" type="tiles">OnlyClientsSaving</result>
+        <result name="goToClientCreation" type="tiles">ClientsCreation</result>
+        <result name="goToBothManagement" type="tiles">ManageClientsSaving</result>
+    </action>
+    
+    <action name="clientManagementSaving" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction">
+        <result name="goToClientModification" type="tiles">ClientModification</result>
+        <result name="goToCampaignHome" type="tiles">CampaignPlanRedirection</result>
+        <result name="goToClientManagement" type="tiles">OnlyClientsSaving</result>
+        <result name="goToClientCreation" type="tiles">ClientsCreation</result>
+        <result name="goToBothManagement" type="tiles">ManageClientsSaving</result>
+    </action>
+
+    <action name="clientModificationSaving" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction">
+        <result name="goToClientModification" type="tiles">ClientModification</result>
+        <result name="goToCampaignHome" type="tiles">CampaignPlanRedirection</result>
+        <result name="goToClientManagement" type="tiles">OnlyClientsSaving</result>
+        <result name="goToClientCreation" type="tiles">ClientsCreation</result>
+        <result name="goToBothManagement" type="tiles">ManageClientsSaving</result>
+    </action>
+
+
+    <action name="sendInvitation" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction">
+        <result name="success" type="tiles">SendInvitation</result>
+    </action>
+
+    <action name="userInvitationSaving" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanAction" method="sendInvitationToUser">
+        <result name="goToInvitation" type="tiles">SendInvitation</result>
+        <result name="input" type="tiles">SendInvitation</result>
+    </action>
+
+    <action name="modifyClientDataSaving" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanJson" method="modifyClientDataSavingInDB">
+        <result type="json" />
+    </action>
+
+    <action name="clientCreationExist" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanJson" method="clientCreationExistChecking">
+        <result type="json" />
+    </action>
+
+    <action name="campaignCreationExist" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanJson" method="campaignCreationExistChecking">
+        <result type="json" />
+    </action>
+
+    <action name="campaignModifyCreationExist" class="com.bmf.quickklix.ui.campaignplan.CampaignPlanJson" method="campaignModifyExistChecking">
+        <result type="json" />
+    </action>
+
+</package>
+
+
+<!--Target Market Package-->
+
+<package name="com.bmf.quickklix.ui.targetmarket" extends="struts-default,json-default" namespace="/">
+    <result-types>
+        <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+    </result-types>
+
+<!-- Target Market Actions -->
+
+    <action name="targetMarketRedirection" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmRedirection">
+        <result name="goToTmHome" type="tiles">TargetMarketRedirection</result>
+    </action>
+
+    <action name="tmStatesRedirection" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmStatesRedirection">
+        <result name="goToTmStateCreation" type="tiles">TmStatesSelectByLocation</result>
+        <result name="goToTmStateSaving" type="tiles">TmStatesSaving</result>
+    </action>
+
+    <action name="tmStatesCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmMapCreation">
+        <result name="success" type="tiles">TmStatesSelectByLocation</result>
+    </action>
+    
+    <action name="mpTmStatesCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="mpTmMapCreation">
+        <result name="success" type="tiles">TmStatesSelectByLocation</result>
+    </action>
+    
+    <action name="tmSelectByState" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmStatesDataToDimension">
+        <result name="goToDimension" type="tiles">TmDimensionCreation</result>
+    </action>
+
+    <action name="tmCountyRedirection" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmCountyRedirection">
+        <result name="goToMediaPlanHome" type="tiles">TargetMarketRedirection</result>
+    </action>
+    
+<!--TM Dimensions Actions Creation--> 
+
+    <action name="tmAbilityToSpeakEnglishCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmAbilityToSpeakEnglishCreation">
+        <result name="goToTmSpeakEnglishCreation" type="tiles">TmAbilityToSpeakEnglishCreation</result>
+    </action>
+    
+    <action name="abilityToSpeakSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmAgeCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmAgeCreation">
+        <result name="goToTmAgeCreation" type="tiles">TmAgeCreation</result>
+    </action> 
+    
+    <action name="ageSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmAncestryCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmAncestryCreation">
+        <result name="goToTmAncestryCreation" type="tiles">TmAncestryCreation</result>
+    </action>
+    
+    <action name="ancestrySaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmCitizenshipCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmCitizenshipCreation">
+        <result name="goToTmCitizenshipCreation" type="tiles">TmCitizenshipCreation</result>
+    </action>
+    
+    <action name="citizenshipSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmClassOfWorkerCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmClassOfWorkerCreation">
+        <result name="goToTmClassOfWorkerCreation" type="tiles">TmClassOfWorkerCreation</result>
+    </action>
+    
+    <action name="classOfWorkerSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmEducationCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmEducationCreation">
+        <result name="goToTmEducationCreation" type="tiles">TmEducationCreation</result>
+    </action>
+    
+    <action name="educationSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmGenderCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmGenderCreation">
+        <result name="goToTmGenderCreation" type="tiles">TmGenderCreation</result>
+    </action>
+    
+    <action name="genderSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmIncomeCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmIncomeCreation">
+        <result name="goToTmIncomeCreation" type="tiles">TmIncomeCreation</result>
+    </action>
+    
+    <action name="incomeSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmIndustryCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmIndustryCreation">
+        <result name="goToTmIndustryCreation" type="tiles">TmIndustryCreation</result>
+    </action>
+    
+    <action name="industrySaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmLanguageSpokenAtHomeCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmLanguageSpokenAtHomeCreation">
+        <result name="goToTmLanguageCreation" type="tiles">TmLanguageSpokenAtHomeCreation</result>
+    </action>
+    
+    <action name="languageSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmMaritalStatusCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmMaritalStatusCreation">
+        <result name="goToTmMaritalStatusCreation" type="tiles">TmMaritalStatusCreation</result>
+    </action>
+    
+    <action name="maritalStatusSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmMeansOfTransportationCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmMeansOfTransportationCreation">
+        <result name="goToTransportationCreation" type="tiles">TmMeansOfTransportationCreation</result>
+    </action>
+    
+    <action name="transportationSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmMigrationStatusCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmMigrationStatusCreation">
+        <result name="goToTmMigrationStatusCreation" type="tiles">TmMigrationStatusCreation</result>
+    </action>
+    
+    <action name="migrationSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmOccupationCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmOccupationCreation">
+        <result name="goToTmOccupationCreation" type="tiles">TmOccupationCreation</result>
+    </action>
+    
+    <action name="occupationSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmRaceCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmRaceCreation">
+        <result name="goToTmRaceCreation" type="tiles">TmRaceCreation</result>
+    </action>
+    
+    <action name="raceSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmDimensionSaving" type="tiles">TmDimensionCreation</result>
+        <result name="goToTmDimensionModification" type="tiles">TmDimensionModification</result>
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+    <action name="tmZeroTotalValRedirection" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmNoTotalValueBack">
+        <result name="moveBackToNew" type="tiles">TmDimensionCreation</result>
+        <result name="moveBackToModify" type="tiles">TmDimensionModification</result>
+    </action>
+    
+<!--Target Market Saving Actions --> 
+
+    <action name="tmDetailsSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmCreation" type="tiles">tmCreationWithCpAndCl</result>
+        <result name="moveBackToNew" type="tiles">TmStatesSelectByLocation</result>
+    </action>  
+    
+    <action name="tmClientCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="success" type="tiles">TmClientCreation</result>
+    </action>  
+    
+    <action name="tmCampaignCreation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmCampRedirection">
+        <result name="success" type="tiles">TmCampaignCreation</result>
+    </action>
+   
+    <action name="tmClientDetailsSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmClientDetailsSaving">
+        <result name="goToTmCreation" type="tiles">tmCreationWithCpAndCl</result>
+        <result name="input" type="tiles">TmClientCreation</result>
+    </action>
+
+    <action name="tmCampaignDetailsSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="tmCampaignDataSaving">
+        <result name="goToTmCreation" type="tiles">tmCreationWithCpAndCl</result>
+        <result name="input" type="tiles">TmCampaignCreation</result>
+    </action>
+    
+    <action name="tmDataSavingInDB" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="targetMarketSaving">
+        <result name="goToTmSaving" type="tiles">TmStatesSaving</result> 
+        <result name="input" type="tiles">tmCreationWithCpAndCl</result>  
+        <result name="goToMpCreation" type="redirectAction"><param name="actionName">goToTmMpCreation</param></result>
+    </action>
+    
+    <action name="tmManagementSaving" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmModification" type="tiles">TmDimensionModification</result> 
+        <result name="goToTmStateSaving" type="tiles">TmStatesSaving</result>
+        <result name="goToTmStateCreation" type="tiles">TmStatesSelectByLocation</result>       
+    </action>
+    
+    <action name="tmDetailsUpdating" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction">
+        <result name="goToTmModification" type="tiles">tmUpdationWithCpAndCl</result>
+        <result name="moveBackToModify" type="redirectAction"><param name="actionName">tmStatesRedirection</param></result>
+    </action>
+    
+    <action name="tmDataUpdateInDB" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesAction" method="targetMarketUpdation">
+        <result name="goToTmUpdating" type="tiles">TmStatesSaving</result>
+        <result name="input" type="tiles">tmUpdationWithCpAndCl</result>        
+    </action>
+    
+<!--Target Market Json Actions -->
+
+    <action name="tmDimenJson" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesJson" method="tmDimenJsonRedirection">
+        <result type="json" />
+    </action> 
+    
+    <action name="tmCampaignSelectionFromDB" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesJson" method="tmCampaignSelection">
+        <result type="json" />
+    </action>  
+    
+    <action name="tmDimenJsonModification" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesJson" method="tmDimenJsonModification">
+        <result type="json" />
+    </action>  
+    
+    <action name="tmCreationExist" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesJson" method="tmCreationNameExistChecking">
+        <result type="json" />
+    </action>
+    
+    <action name="tmClAndCpValidation" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesJson" method="tmClAndCpValidationChecking">
+        <result type="json" />
+    </action>
+
+    <action name="tmModifyExist" class="com.bmf.quickklix.ui.targetmarket.TargetMarketStatesJson" method="tmModifyNameExistChecking">
+        <result type="json" />
+    </action>        
+    
+
+</package>
+
+
+<!--Media Plan Package-->
+
+<package name="com.bmf.quickklix.ui.mediaplan" extends="struts-default,json-default" namespace="/">
+        <result-types>
+        <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
+
+<!-- Media Plan Actions -->
+
+    <action name="mediaPlanRedirection" class="com.bmf.quickklix.ui.mediaplan.MediaPlanAction" method="mediaPlanRedirection">
+        <result name="goToMediaPlanHome" type="tiles">MediaPlanHomeRedirection</result>
+        <result name="goToMediaPlanSaving" type="tiles">MediaPlanSaving</result>
+    </action>
+
+    <action name="mediaPlanCreation" class="com.bmf.quickklix.ui.mediaplan.MediaPlanAction">
+        <result name="success" type="tiles">MediaPlanCreation</result>
+    </action>
+
+    <action name="mediaPlanDataSaving" class="com.bmf.quickklix.ui.mediaplan.MediaPlanAction" method="mediaplanFormSaving">
+        <result name="goToMediaPlanSaving" type="tiles">MediaPlanSaving</result>
+        <result name="input" type="tiles">MediaPlanCreation</result>
+    </action>
+
+    <action name="mediaPlanClientCreation" class="com.bmf.quickklix.ui.mediaplan.MediaPlanAction">
+        <result name="success" type="tiles">MediaPlanClientCreation</result>
+    </action>
+
+    <action name="mpClientDetailsSaving" class="com.bmf.quickklix.ui.mediaplan.MediaPlanAction" method="mpClientDetailsSaving">
+        <result name="goToMpCreation" type="tiles">MediaPlanCreation</result>
+        <result name="input" type="tiles">MediaPlanClientCreation</result>
+    </action>
+
+    <action name="mediaPlanCampaignCreation" class="com.bmf.quickklix.ui.mediaplan.MediaPlanAction" method="mpCampRedirection">
+        <result name="success" type="tiles">MediaPlanCampaignCreation</result>
+    </action>
+
+    <action name="mpCampaignDetailsSaving" class="com.bmf.quickklix.ui.mediaplan.MediaPlanAction" method="mpCampaignDataSaving">
+        <result name="goToMpCreation" type="tiles">MediaPlanCreation</result>
+        <result name="input" type="tiles">MediaPlanCampaignCreation</result>
+    </action>
+
+    <action name="mediaplanTargetMarketCreation" class="com.bmf.quickklix.ui.mediaplan.MediaPlanAction">
+        <result name="success" type="redirectAction"><param name="actionName">mpTmStatesCreation</param></result>
+    </action>
+    
+    <action name="goToTmMpCreation" class="com.bmf.quickklix.ui.mediaplan.MediaPlanAction" method="goToTmMpDataCreation">
+        <result name="goToMpCreation" type="tiles">MediaPlanCreation</result>
+    </action>
+
+    <action name="mediaPlanModificationSaving" class="com.bmf.quickklix.ui.mediaplan.MediaPlanAction" method="mediaPlanFormModification">
+        <result name="goToMediaPlanSaving" type="tiles">MediaPlanSaving</result>
+        <result name="input" type="tiles">MediaPlanModification</result>
+    </action>
+    
+    <action name="mediaPlanManagementSaving" class="com.bmf.quickklix.ui.mediaplan.MediaPlanAction">
+        <result name="goToMediaPlanSaving" type="tiles">MediaPlanSaving</result>
+        <result name="goToMediaPlanCreation" type="tiles">MediaPlanCreation</result>
+        <result name="goToMediasSelection" type="redirectAction"><param name="actionName">allMediasDataSaving</param></result>
+        <result name="goToMediaPlanModification" type="tiles">MediaPlanModification</result>
+    </action>
+
+<!--All Medias actions-->
+
+    <action name="allMediasDataSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="allMediasRedirection">
+      <result name="goToAllMedias" type="tiles">AllMediasDataSaving</result>
+      <result name="goToNPRedirection" type="tiles">NewspaperRedirection</result>
+    </action>
+
+    <action name="allMediasSelection" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="goToNpContactInfo" type="tiles">NewspapersModification</result>
+      <result name="goToMgContactInfo" type="tiles">magazinesModification</result>
+      <result name="goToTvContactInfo" type="tiles">TVContactInfoModification</result>
+      <result name="goToRadioContactInfo" type="tiles">RadioModification</result>
+      <result name="goToIntUsaContactInfo" type="tiles">InternetUSSitesModification</result>
+      <result name="goToIntWwContactInfo" type="tiles">InternetWorldWideSitesModification</result>
+      <result name="goToMaContactInfo" type="tiles">MAppsContactInfoModification</result>
+      <result name="allMediaDeletion" type="tiles">AllMediasDataSaving</result>
+      <result name="goToNPRedirection" type="tiles">NewspaperRedirection</result>
+    </action>
+
+<!--Newspapers actions-->
+
+    <action name="newspapersRedirection" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">NewspaperRedirection</result>
+    </action>
+
+    <action name="npSelectByLocation" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">NewspapersSelectbyLocation</result>
+    </action>
+
+     <action name="npSelectByState" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="npCityBySate">
+      <result name="success" type="tiles">NewspapersCitySelection</result>
+    </action>
+
+     <action name="npSelectByCity" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">NewspapersSelectbyLocation</result>
+      <result name="success" type="tiles">NewspapersNamesSelection</result>
+    </action>
+
+    <action name="npSelectByNewspaper" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">NewspapersCitySelection</result>
+      <result name="success" type="tiles">NewspapersContactInfoSelection</result>
+    </action>
+
+    <action name="npContactInfoSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">NewspapersNamesSelection</result>
+      <result name="success" type="tiles">NewspapersDataSaving</result>
+    </action>
+
+    <action name="top100NpContactInfo" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">Top100NewspapersSelection</result>
+    </action>
+
+    <action name="npTop100ContactInfoSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">NewspaperRedirection</result>
+      <result name="success" type="tiles">NewspapersDataSaving</result>
+    </action>
+
+    <action name="manageNewspapersSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">NewspapersModification</result>
+      <result name="mediadeletion" type="tiles">NewspaperRedirection</result>
+    </action>
+
+    <action name="newspaperModification" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="goToInnerBack" type="tiles">NewspapersDataSaving</result>
+      <result name="goToOuterBack" type="tiles">AllMediasDataSaving</result>
+      <result name="goToNpModification" type="tiles">NewspapersDataSaving</result>
+      <result name="goToAllMediaModification" type="tiles">AllMediasDataSaving</result>
+    </action>
+
+<!--Magazines Actions-->
+
+    <action name="magazinesRedirection" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+        <result name="success" type="tiles">MediaPlanMagazineRedirection</result>
+    </action>
+
+    <action name="mgselectbycategory" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+        <result name="success" type="tiles">MgCategoryRedirection</result>
+    </action>
+
+    <action name="mgnameselectioncategory" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+        <result name="success" type="tiles">MgNameRedirection</result>
+        <result name="moveback" type="tiles">MediaPlanMagazineRedirection</result>
+    </action>
+
+    <action name="selectedmagazinename" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+        <result name="success" type="tiles">MgContactInfoRedirection</result>
+        <result name="moveback" type="tiles">MgCategoryRedirection</result>
+    </action>
+
+    <action name="mgContactInfoSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+        <result name="success" type="tiles">MgDataSavingRedirection</result>
+        <result name="moveback" type="tiles">MgNameRedirection</result>
+    </action>
+
+    <action name="mgTop100ContactInfoSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+        <result name="success" type="tiles">MgDataSavingRedirection</result>
+        <result name="moveback" type="tiles">MediaPlanMagazineRedirection</result>
+    </action>
+
+    <action name="top100magazinescirculation" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+        <result name="success" type="tiles">Top100MgContactRedirection</result>
+        <result name="moveback" type="tiles">MediaPlanMagazineRedirection</result>
+    </action>
+
+    <action name="manageMagazinesSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">magazinesModification</result>
+      <result name="mediadeletion" type="tiles">MediaPlanMagazineRedirection</result>
+    </action>
+
+    <action name="magazinesModification" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="goToInnerBack" type="tiles">MgDataSavingRedirection</result>
+      <result name="goToOuterBack" type="tiles">AllMediasDataSaving</result>
+      <result name="goToMgModification" type="tiles">MgDataSavingRedirection</result>
+      <result name="goToAllMediaModification" type="tiles">AllMediasDataSaving</result>
+    </action>
+
+<!--Radio Actions-->
+
+    <action name="radioRedirection" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="radioRedirection">
+      <result name="success" type="tiles">RadioRedirection</result>
+    </action>
+
+    <action name="radioSelectByLocation" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">RadioSelectbyLocation</result>
+    </action>
+
+    <action name="radioSelectByState" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="radioCityBySate">
+      <result name="success" type="tiles">RadioCitySelection</result>
+    </action>
+
+    <action name="radioSelectByCity" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">RadioSelectbyLocation</result>
+      <result name="success" type="tiles">RadioStationNameSelection</result>
+    </action>
+
+    <action name="radioStationSelection" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">RadioCitySelection</result>
+      <result name="success" type="tiles">RadioContactInfoSelection</result>
+    </action>
+
+    <action name="radioContactInfoSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">RadioStationNameSelection</result>
+      <result name="success" type="tiles">RadioDataSaving</result>
+    </action>
+
+    <action name="radioSelectByFormat" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="radioFormatsInfo">
+       <result name="success" type="tiles">RadioFormatSelection</result>
+    </action>
+
+    <action name="radioFormatSelection" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="radioFormatStates">
+      <result name="success" type="tiles">RadioFormatStateSelection</result>
+    </action>
+
+    <action name="radioFormatSelectByState" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">RadioFormatSelection</result>
+      <result name="success" type="tiles">RadioFormatCitySelection</result>
+    </action>
+
+    <action name="radioFormatSelectByCity" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove"  type="tiles">RadioFormatStateSelection</result>
+      <result name="success" type="tiles">RadioFormatStationNameSelection</result>
+    </action>
+
+    <action name="radioFormatStationSelection" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove"  type="tiles">RadioFormatCitySelection</result>
+      <result name="success" type="tiles">RadioFormatContactInfoSelection</result>
+    </action>
+
+    <action name="radioFormatContactInfoSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">RadioFormatStationNameSelection</result>
+      <result name="success" type="tiles">RadioDataSaving</result>
+    </action>
+
+    <action name="manageRadioSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">RadioModification</result>
+      <result name="mediadeletion" type="tiles">RadioRedirection</result>
+    </action>
+
+    <action name="radioModification" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="goToInnerBack" type="tiles">RadioDataSaving</result>
+      <result name="goToOuterBack" type="tiles">AllMediasDataSaving</result>
+      <result name="goToRadioModification" type="tiles">RadioDataSaving</result>
+      <result name="goToAllMediaModification" type="tiles">AllMediasDataSaving</result>
+    </action>
+
+<!--TV Actions-->
+
+    <action name="televisionRedirection" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">TelevisionRedirection</result>
+    </action>
+
+    <action name="tvSelectByLocation" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">TVSelectbyLocation</result>
+    </action>
+
+    <action name="tvSelectByState" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="tvCityByStateSelection">
+      <result name="success" type="tiles">TVCitySelection</result>
+    </action>
+
+    <action name="tvSelectByCity" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">TVSelectbyLocation</result>
+      <result name="success" type="tiles">TVNamesSelection</result>
+    </action>
+
+    <action name="tvSelectByTelevision" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">TVCitySelection</result>
+      <result name="success" type="tiles">TVContactInfoSelection</result>
+    </action>
+    
+    <action name="tvSelectByNetworkName" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">TvNetworkByCitySelection</result>
+      <result name="success" type="tiles">TVNetworkContactInfoSelection</result>
+    </action>
+
+    <action name="tvContactInfoSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">TVNamesSelection</result>
+      <result name="success" type="tiles">TVContactInfoSaving</result>
+    </action>
+   
+    <action name="tvSelectByNetwork" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="tvNetworkandItsCount">
+      <result name="success" type="tiles">TVNetworkRedirection</result>
+    </action>
+
+    <action name="televisionNetworkSelection" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="tvNetworkSelection">
+      <result name="success" type="tiles">TVSelectbyLocationInNetwork</result>
+    </action>
+
+    <action name="tvNetworkSelectByState" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="tvNetworkByStateSelection">
+      <result name="success" type="tiles">TvNetworkByCitySelection</result>
+    </action>
+
+    <action name="tvNetworkSelectByCity" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">TvNetworkByNameSelection</result>
+      <result name="backmove" type="tiles">TVSelectbyLocationInNetwork</result>
+    </action>
+    
+    <action name="tvNetworkContactInfoSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">TvNetworkByNameSelection</result>
+      <result name="success" type="tiles">TVContactInfoSaving</result>
+    </action>
+
+    <action name="televisionManagement" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">TVContactInfoModification</result>
+      <result name="mediadeletion" type="tiles">TelevisionRedirection</result>
+    </action>
+
+    <action name="tvContactInfoModification" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="goToInnerBack" type="tiles">TVContactInfoSaving</result>
+      <result name="goToOuterBack" type="tiles">AllMediasDataSaving</result>
+      <result name="goToTvModification" type="tiles">TVContactInfoSaving</result>
+      <result name="goToAllMediaModification" type="tiles">AllMediasDataSaving</result>
+    </action>
+
+<!--Internet Actions-->
+
+    <action name="internetRedirection" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">InternetRedirection</result>
+    </action>
+
+    <action name="topInternetSitesInUS" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="internetUSARedirection">
+      <result name="success" type="tiles">TopInternetSitesInUS</result>
+    </action>
+
+    <action name="USTopInternetSitesByRank" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">USTopInternetSitesByRankContactInfo</result>
+    </action>
+
+    <action name="USSitesByRankContactInfoSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove"  type="tiles">TopInternetSitesInUS</result>
+      <result name="success" type="tiles">InternetUSDataSaving</result>
+    </action>
+
+    <action name="USTopInternetSitesByCategory" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="internetCategoryAndCountInfo">
+      <result name="success" type="tiles">InternetUSCategorySelection</result>
+    </action>
+
+    <action name="USInternetCategorySelection" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="websiteNamesByCategory">
+      <result name="success" type="tiles">InternetCategoryWebsiteNameSelection</result>
+    </action>
+
+    <action name="USWebsiteNameByCategory" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove" type="tiles">InternetUSCategorySelection</result>
+      <result name="success" type="tiles">USTopInternetSitesByCategoryContactInfo</result>
+    </action>
+
+    <action name="USInternetCategoryContactInfoSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove"  type="tiles">InternetCategoryWebsiteNameSelection</result>
+      <result name="success" type="tiles">InternetUSDataSaving</result>
+    </action>
+
+    <action name="topInternetSitesInWorld" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="internetWorldWideRedirection">
+      <result name="success" type="tiles">TopInternetSitesInWorld</result>
+    </action>
+
+    <action name="worldTopSitesContactInfoSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="backmove"  type="tiles">InternetRedirection</result>
+      <result name="success" type="tiles">InternetWorldWideDataSaving</result>
+    </action>
+
+    <action name="manageInternetUSASaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">InternetUSSitesModification</result>
+      <result name="mediadeletion" type="tiles">InternetRedirection</result>
+    </action>
+
+    <action name="manageInternetWorldWideSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">InternetWorldWideSitesModification</result>
+      <result name="mediadeletion" type="tiles">InternetRedirection</result>
+    </action>
+
+    <action name="USInternetSitesModification" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="goToInnerBack" type="tiles">InternetUSDataSaving</result>
+      <result name="goToOuterBack" type="tiles">AllMediasDataSaving</result>
+      <result name="goToIntUsaModification" type="tiles">InternetUSDataSaving</result>
+      <result name="goToAllMediaModification" type="tiles">AllMediasDataSaving</result>
+    </action>
+   
+    <action name="worldWideInternetSitesModification" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="goToInnerBack" type="tiles">InternetWorldWideDataSaving</result>
+      <result name="goToOuterBack" type="tiles">AllMediasDataSaving</result>
+      <result name="goToIntWwModification" type="tiles">InternetWorldWideDataSaving</result>
+      <result name="goToAllMediaModification" type="tiles">AllMediasDataSaving</result>
+    </action>
+
+<!--Mobile Apps Actions-->
+
+    <action name="mobileAppsRedirection" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+         <result name="success" type="tiles">MobileAppsRedirection</result>
+    </action>
+
+    <action name="selectByMobileAppsCategory" class="com.bmf.quickklix.ui.mediaplan.MediasAction"  method="mobileAppsCategoryAndItsCount">
+         <result name="success" type="tiles">MobileAppsCategorySelection</result>
+    </action>
+
+    <action name="mobileAppsSelectedCategory" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="mobileAppsSelectedCategory">
+          <result name="success" type="tiles">SelectByMobileAppCategory</result>
+    </action>
+
+    <action name="operatingSystemsInApps" class="com.bmf.quickklix.ui.mediaplan.MediasAction" method="mobileAppsPageredirection">
+          <result name="alphabetical" type="tiles">SelectByMobileAppCategory</result>
+           <result name="operating" type="tiles">SelectByMobileAppOSCategory</result>
+    </action>
+
+    <action name="mobileAppsNameSelection" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+       <result name="backmove" type="tiles">MobileAppsCategorySelection</result>
+       <result name="success" type="tiles">MobileAppsNameSelection</result>
+    </action>
+
+    <action name="mobileAppContactInfoSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+        <result name="alphabetBack" type="tiles">SelectByMobileAppCategory</result>
+        <result name="aoppSysBack" type="tiles">SelectByMobileAppOSCategory</result>
+        <result name="success" type="tiles">MobileAppContactInfoSaving</result>
+    </action>
+
+    <action name="mobileAppsManagement" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">MAppsContactInfoModification</result>
+      <result name="mediadeletion" type="tiles">MobileAppsRedirection</result>
+    </action>
+  
+    <action name="selectByMobileAppsOsCategory" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">MobileAppsOsRedirection</result>
+    </action>
+
+    <action name="mAppsselectedOperatingSystem" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">MAppsselectedOperatingSystem</result>
+      <result name="backmove" type="tiles">MobileAppsRedirection</result>
+    </action>
+
+    <action name="mobileAppsOSSaving" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="success" type="tiles">MobileAppsRedirection</result>
+      <result name="backmove" type="tiles">MobileAppsOsRedirection</result>
+    </action>
+
+    <action name="mobileAppsContactInfoModification" class="com.bmf.quickklix.ui.mediaplan.MediasAction">
+      <result name="goToInnerBack" type="tiles">MobileAppContactInfoSaving</result>
+      <result name="goToOuterBack" type="tiles">AllMediasDataSaving</result>
+      <result name="goToMaModification" type="tiles">MobileAppContactInfoSaving</result>
+      <result name="goToAllMediaModification" type="tiles">AllMediasDataSaving</result>
+    </action>
+
+
+<!-- Media Plan Json Actions -->
+
+    <action name="mpCampaignSelectionFromDB" class="com.bmf.quickklix.ui.mediaplan.MediaPlanJson" method="mpCampaignSelection">
+        <result type="json" />
+    </action>
+     <action name="mpTargetMarketSelectionFromDB" class="com.bmf.quickklix.ui.mediaplan.MediaPlanJson" method="mpTargetMarketSelection">
+        <result type="json" />
+    </action>
+    
+    <action name="mediaPlanCreationExist" class="com.bmf.quickklix.ui.mediaplan.MediaPlanJson" method="mediaPlanCreationNameExistChecking">
+        <result type="json" />
+    </action>
+
+    <action name="mediaPlanModifyExist" class="com.bmf.quickklix.ui.mediaplan.MediaPlanJson" method="mediaPlanModifyNameExistChecking">
+        <result type="json" />
+    </action>
+    
+    <action name="mpClCpAndTmValidationChecking" class="com.bmf.quickklix.ui.mediaplan.MediaPlanJson" method="mpClCpAndTmValidationCheckingInDB">
+        <result type="json" />
+    </action>
+
+
+<!-- Media Plan Class Actions -->
+
+
+<!-- Media Plan Json Actions -->
+
+
+</package>
+
+
+<!--Reports Package-->
+
+<package name="com.bmf.quickklix.ui.reports" extends="struts-default,json-default" namespace="/">
+        <result-types>
+        <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
+
+<!-- Reports Actions -->
+ 
+    <action name="reportsRedirection" class="com.bmf.quickklix.ui.reports.ReportsAction">
+            <result>/reportsPageForward.serv</result>
+    </action>
+
+</package>
+
+
+<!--Analytics Package-->
+
+<package name="com.bmf.quickklix.ui.analytics" extends="struts-default,json-default" namespace="/">
+        <result-types>
+        <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
+
+<!-- Analytics Actions -->
+
+    <action name="analyticsRedirection" class="com.bmf.quickklix.ui.analytics.AnalyticsAction">
+        <result name="success" type="tiles">AnalyticsRedirection</result>
+    </action>
+
+</package>
+
+</struts>

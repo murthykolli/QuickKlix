@@ -1,0 +1,77 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib prefix="s" uri="/struts-tags" %>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:: QuickKlix</title>
+<meta name="keywords" content="QuickKlix Website" />
+<meta name="description" content="QuickKlix Website" />
+<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {color: #73A85A}
+.style2 {color: #AFB593}
+-->
+</style>
+</head>
+<body>
+<div id="header_wrapper1">
+
+    <br/>
+     <div align="right"><font color="#73a85a" size="2"><b>Welcome&nbsp;&nbsp;<s:property value="userName"/></b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/MF_SSOWEB/userinfo.action"><font color="#73a85a" size="2" ><b>[</b></font> <font color="#696f5c" size="2"> Account Settings</font><font color="#73a85a" size="2" ><b> ]</b></font> </a>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="logout.action"><font color="#73a85a" size="2" ><b><img src="/MF_CampaignPlan/images/logout.gif"  />Logout</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+	<div id="header">
+
+		<div id="site_title">
+            <div align="left">
+              <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="260" height="65">
+                <param name="movie" value="images/logo.swf" />
+                <param name="quality" value="high" />
+                <embed src="images/logo.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="260" height="65"></embed>
+              </object>
+                  </div>
+	  </div>
+
+            <div id="menu" style=" margin-top: -12px;">
+  <ul>
+    <li><a href="Home.action">Home</a></li>
+                <li><a href="Aboutus.action">About Us</a>
+                <!--<ul><li><a href="salesteam.html">Sales Team</a></li>
+                <li><a href="management.html">Management</a></li>
+               <li><a href="boardofdirectors.html">Board of Directors</a></li>
+                <li><a href="companyculture.html">Company Culture</a></li></ul>--></li>
+                <li><a href="HomeProducts.action">Products</a>
+                <!--<ul><li><a href="campingplan.html">Campaign Plan</a></li>
+                <li><a href="targetmarket.html">Target Market</a></li>
+                <li><a href="mediaplan.html">Media Plan</a></li>
+                <li><a href="mediabuy.html">Media Buy</a></li>
+                <li><a href="analytics.html">Analytics</a></li></ul>--></li>
+                <li><a href="Careers.action">Careers</a></li>
+                <li><a href="Contactus.action">Contact</a></li>
+
+              <li><a href="#" class="current" >  User Account  </a>
+                  <ul><li><a href="/MF_CampaignPlan/campaignInfo.action" >Campaign Plan</a> </li>
+                    <li><a href="/MF_CampaignPlan/targethome.action">Target Market</a></li>
+                    <li><a href="/MF_CampaignPlan/selectionmedia.action">Media Plan</a></li>
+                    <li><a href="/MF_CampaignPlan/mediabuy.action">Media Buy</a></li>
+                    <li><a href="/MF_CampaignPlan/analytics.action">Analytics</a></li>
+                    <li><a href="/MF_CampaignPlan/report.action">Report</a></li></ul> </li>
+            </ul>
+   	  </div> <!-- end of menu -->
+
+        <div class="cleaner"></div>
+  </div> <!-- end of header -->
+</div> <!-- end of header_wrapper -->
+
+<div id="slider_wrapper_inside">
+	<!--<div id="slider_inside"><img src="images/inpic6.jpg" width="950" height="180" /></div> -->
+  <!-- end of slider -->
+</div> <!-- end of slider_wrapper -->
+
+
+
+</body>
+</html>
